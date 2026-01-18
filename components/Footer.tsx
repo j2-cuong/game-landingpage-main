@@ -1,30 +1,18 @@
-import React from 'react';
+import React from "react";
 import navigation from "../data/navigation.json";
 
-// Footer cung cấp thông tin bản quyền, liên kết hỗ trợ và mã QR trợ lý.
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white min-w-[1920px] max-w-[1920px] mx-auto">
+    <footer className="bg-gray-900 text-white min-w-[1890px] max-w-[1890px] mx-auto">
       {/* Main Footer Content */}
       <div className="mx-auto px-8 py-12">
         <div className="grid grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-2">
             <div className="flex items-center mb-6">
-              <img
-                src="/logo-white.png"
-                alt="Kiếm Hiệp Thế Giới"
-                className="h-8 w-auto mr-3"
-              />
-              <span className="text-xl font-bold">Kiếm Hiệp Thế Giới</span>
-            </div>
-
-            <p className="text-gray-400 mb-6 max-w-md">
-              Bản quyền thuộc Công ty Công nghệ Giải trí Tây Sơn Cư. Copyright © 1999-2025
-            </p>
-
-            <div className="flex items-center space-x-4 text-sm text-gray-400">
-              <span>Cam kết tự quản game online chống nghiện</span>
+              <span className="text-xl font-bold">
+                Kiếm thế PC phiên bản 2009
+              </span>
             </div>
           </div>
 
@@ -34,7 +22,10 @@ export default function Footer() {
             <ul className="space-y-2">
               {navigation.footer.supportLinks.map((link, idx) => (
                 <li key={idx}>
-                  <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -52,7 +43,9 @@ export default function Footer() {
                 className="w-24 h-24 mx-0"
               />
             </div>
-            <p className="text-sm text-gray-400 mb-2">Quét mã để đồng hành trong game</p>
+            <p className="text-sm text-gray-400 mb-2">
+              Quét mã để đồng hành trong game
+            </p>
 
             {/* Status Indicators */}
             <div className="flex justify-start space-x-1">
@@ -87,10 +80,15 @@ export default function Footer() {
               <span>|</span>
               {navigation.footer.bottomLinks.map((link, idx) => (
                 <React.Fragment key={idx}>
-                  <a href={link.href} className="hover:text-white transition-colors">
+                  <a
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {link.label}
                   </a>
-                  {idx < navigation.footer.bottomLinks.length - 1 && <span>|</span>}
+                  {idx < navigation.footer.bottomLinks.length - 1 && (
+                    <span>|</span>
+                  )}
                 </React.Fragment>
               ))}
             </div>
@@ -100,6 +98,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-

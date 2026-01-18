@@ -6,12 +6,12 @@ const NAV_ITEMS = navigation.header.navItems;
 
 // Reusable class names for navigation links
 const navLinkClass =
-  "text-white hover:text-yellow-300 px-4 py-2 text-sm font-medium transition-colors flex items-center h-5";
+  "text-white hover:text-yellow-300 px-4 py-2 text-base font-medium transition-colors flex items-center h-5";
 
 // Header renders the main navigation bar with branding.
 export default function Header() {
   return (
-    <header className="absolute min-w-[1920px] z-20" style={{ height: "82px" }}>
+    <header className="absolute min-w-[1890px] z-20" style={{ height: "82px" }}>
       <div className="relative max-w-screen-xl mx-auto px-4">
         <div
           className="flex justify-between items-center h-full"
@@ -36,7 +36,7 @@ export default function Header() {
           </div>
 
           {/* Navigation */}
-          <nav className="flex items-center space-x-0">
+          <nav className="flex items-center space-x-0 text-xl">
             {NAV_ITEMS.map(({ label, href, isExternal }) =>
               href === "/" || href.startsWith("/") ? (
                 <Link
@@ -57,7 +57,7 @@ export default function Header() {
                 >
                   {label}
                 </a>
-              )
+              ),
             )}
           </nav>
         </div>

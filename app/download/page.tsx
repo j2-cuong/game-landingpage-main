@@ -7,7 +7,7 @@ export default function DownloadPage() {
   return (
     <main
       className="mx-auto"
-      style={{ minWidth: "1920px", maxWidth: "1920px" }}
+      style={{ minWidth: "1890px", maxWidth: "1890px" }}
     >
       <Header />
       <Hero>
@@ -16,4 +16,3 @@ export default function DownloadPage() {
     </main>
   );
 }
-

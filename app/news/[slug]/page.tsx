@@ -19,7 +19,7 @@ export default async function ArticlePage({
   return (
     <main
       className="mx-auto"
-      style={{ minWidth: "1920px", maxWidth: "1920px" }}
+      style={{ minWidth: "1890px", maxWidth: "1890px" }}
     >
       <Header />
       <Hero>

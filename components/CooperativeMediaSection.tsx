@@ -1,10 +1,10 @@
 "use client";
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Headphones, Phone } from 'lucide-react';
-import Link from 'next/link';
-import mediaPartners from '../data/mediaPartners.json';
-import navigation from '../data/navigation.json';
-import newsConfig from '../data/newsConfig.json';
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Headphones, Phone } from "lucide-react";
+import Link from "next/link";
+import mediaPartners from "../data/mediaPartners.json";
+import navigation from "../data/navigation.json";
+import newsConfig from "../data/newsConfig.json";
 
 interface MediaPartner {
   id: number;
@@ -25,7 +25,7 @@ export default function CooperativeMediaSection() {
   const totalPages = Math.ceil(partners.length / itemsPerPage);
   const currentPartners = partners.slice(
     currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
+    (currentPage + 1) * itemsPerPage,
   );
 
   const handlePrev = () => {
@@ -37,12 +37,17 @@ export default function CooperativeMediaSection() {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-8 font-kiem-hiep " style={{ minWidth: '1920px' }}>
+    <section
+      className="w-full bg-[#f5f5f5] py-8 font-kiem-hiep "
+      style={{ minWidth: "1890px" }}
+    >
       <div className="w-full max-w-[1200px] mx-auto px-8">
         <div className="grid grid-cols-2 gap-8">
           {/* Left Panel: Đối tác truyền thông */}
           <div className="bg-white p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-6">Đối tác truyền thông</h3>
+            <h3 className="text-lg font-bold text-gray-800 mb-6">
+              Đối tác truyền thông
+            </h3>
 
             <div className="relative px-8">
               {/* Navigation Arrow Left */}
@@ -71,9 +76,13 @@ export default function CooperativeMediaSection() {
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center">
                         <div className="w-10 h-10 bg-gray-200 rounded flex items-center justify-center mb-1 group-hover:bg-gray-300 transition-colors">
-                          <span className="text-xs text-gray-500 font-bold">{partner.name.charAt(0)}</span>
+                          <span className="text-xs text-gray-500 font-bold">
+                            {partner.name.charAt(0)}
+                          </span>
                         </div>
-                        <span className="text-[10px] text-gray-600 text-center leading-tight line-clamp-2">{partner.name}</span>
+                        <span className="text-[10px] text-gray-600 text-center leading-tight line-clamp-2">
+                          {partner.name}
+                        </span>
                       </div>
                     )}
                   </Link>
@@ -93,7 +102,9 @@ export default function CooperativeMediaSection() {
 
           {/* Right Panel: Liên hệ CSKH */}
           <div className="bg-white p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-6">Liên hệ CSKH</h3>
+            <h3 className="text-lg font-bold text-gray-800 mb-6">
+              Liên hệ CSKH
+            </h3>
 
             <div className="space-y-5 mb-6">
               {/* Maintenance Time */}
@@ -102,8 +113,12 @@ export default function CooperativeMediaSection() {
                   <Headphones className="w-5 h-5 text-gray-700" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800 mb-1">Thời gian bảo trì</p>
-                  <p className="text-sm text-gray-600">{newsConfig.sidebar.contact.maintenance}</p>
+                  <p className="text-sm font-semibold text-gray-800 mb-1">
+                    Thời gian bảo trì
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {newsConfig.sidebar.contact.maintenance}
+                  </p>
                 </div>
               </div>
 
@@ -113,8 +128,12 @@ export default function CooperativeMediaSection() {
                   <Phone className="w-5 h-5 text-gray-700" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800 mb-1">Số điện thoại CSKH</p>
-                  <p className="text-sm text-gray-600">{newsConfig.sidebar.contact.hotline}</p>
+                  <p className="text-sm font-semibold text-gray-800 mb-1">
+                    Số điện thoại CSKH
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {newsConfig.sidebar.contact.hotline}
+                  </p>
                 </div>
               </div>
             </div>
@@ -137,4 +156,3 @@ export default function CooperativeMediaSection() {
     </section>
   );
 }
-

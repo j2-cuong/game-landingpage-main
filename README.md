@@ -41,12 +41,12 @@ root/
 
 Dự án hiện có các đường dẫn (routes) sau:
 
-| Route | File Path | Chức năng | Thành phần chính |
-|-------|-----------|-----------|------------------|
-| `/` | `app/page.tsx` | Trang chủ chính thức | `Hero`, `NewsActivitySection`, `GameSection`, `CooperativeMediaSection` |
-| `/news` | `app/news/page.tsx` | Trung tâm tin tức | `Hero`, `NewsList` |
-| `/news/[slug]` | `app/news/[slug]/page.tsx` | Chi tiết một bài viết | `ArticleDetail` |
-| `/download` | `app/download/page.tsx` | Trang hướng dẫn tải game | `DownloadDetail` |
+| Route          | File Path                  | Chức năng                | Thành phần chính                                                        |
+| -------------- | -------------------------- | ------------------------ | ----------------------------------------------------------------------- |
+| `/`            | `app/page.tsx`             | Trang chủ chính thức     | `Hero`, `NewsActivitySection`, `GameSection`, `CooperativeMediaSection` |
+| `/news`        | `app/news/page.tsx`        | Trung tâm tin tức        | `Hero`, `NewsList`                                                      |
+| `/news/[slug]` | `app/news/[slug]/page.tsx` | Chi tiết một bài viết    | `ArticleDetail`                                                         |
+| `/download`    | `app/download/page.tsx`    | Trang hướng dẫn tải game | `DownloadDetail`                                                        |
 
 ## ✨ Tính năng nổi bật
 
@@ -54,7 +54,7 @@ Dự án hiện có các đường dẫn (routes) sau:
 2.  **Nhạc nền (Background Music):** Trình phát nhạc nền tự động (khi có tương tác) với giao diện floating button mượt mà, hỗ trợ bật/tắt nhạc toàn trang.
 3.  **Hiệu ứng Kiếm Hiệp:** Sử dụng font chữ phong cách kiếm hiệp kết hợp với hiệu ứng Hover/Animation từ Framer Motion tạo cảm giác nhập vai cao.
 4.  **Tối ưu hóa SEO:** Đã cấu hình Meta Tags, Title động và cấu trúc HTML Semantic theo chuẩn SEO của Next.js.
-5.  **Giao diện linh hoạt:** Thiết kế cố định (Fixed Width 1920px) cho trải nghiệm PC chuẩn xác, kết hợp các thành phần linh hoạt.
+5.  **Giao diện linh hoạt:** Thiết kế cố định (Fixed Width 1890px) cho trải nghiệm PC chuẩn xác, kết hợp các thành phần linh hoạt.
 
 ## 🛠 Hướng dẫn phát triển
 
@@ -71,14 +71,18 @@ yarn install
 ```bash
 npm run dev
 ```
+
 Mở [http://localhost:3000](http://localhost:3000) để xem kết quả.
 
 ### 3. Cập nhật nội dung
+
 Để thay đổi thông tin trên trang, hãy chỉnh sửa các file tương ứng trong thư mục `src/data/`:
+
 - `navigation.json`: Header, Footer & TopBar links.
 - `newsArticles.json`: Danh sách bài viết tin tức.
 - `activities.json`: Các hoạt động đang diễn ra.
 - `downloadInfo.json`: Thông tin các phiên bản tải về.
 
 ## 📝 Giấy phép
+
 Bản quyền thuộc về đội ngũ phát triển dự án.

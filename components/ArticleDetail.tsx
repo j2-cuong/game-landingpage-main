@@ -37,7 +37,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
 
             {/* Promotional Banners */}
             {newsConfig.sidebar.promotions.map((promo, idx) => (
-              <div key={idx} className="relative rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-shadow group">
+              <div
+                key={idx}
+                className="relative rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-shadow group"
+              >
                 <img
                   src={promo.image}
                   alt={promo.title}
@@ -64,7 +67,9 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     <span className="text-[8px] text-gray-400">QR Code</span>
                   </div>
                 </div>
-                <p className="text-[10px] text-gray-700 text-center font-medium">Kiếm Hiệp Thế Giới</p>
+                <p className="text-[10px] text-gray-700 text-center font-medium">
+                  Kiếm Hiệp Thế Giới
+                </p>
                 <p className="text-[9px] text-gray-500 text-center">Trợ Lý</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
@@ -78,7 +83,9 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     <span className="text-[8px] text-gray-400">QR Code</span>
                   </div>
                 </div>
-                <p className="text-[10px] text-gray-700 text-center font-medium">Kiếm Hiệp Thế Giới</p>
+                <p className="text-[10px] text-gray-700 text-center font-medium">
+                  Kiếm Hiệp Thế Giới
+                </p>
                 <p className="text-[9px] text-gray-500 text-center">Game PC</p>
               </div>
             </div>
@@ -86,17 +93,31 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             {/* Contact Information */}
             <div className="bg-gray-50 rounded-lg p-3 border border-gray-200 mt-2">
               <div className="flex items-start gap-2 mb-2">
-                <Phone size={14} className="text-gray-600 mt-0.5 flex-shrink-0" />
+                <Phone
+                  size={14}
+                  className="text-gray-600 mt-0.5 flex-shrink-0"
+                />
                 <div className="flex-1">
-                  <p className="text-xs text-gray-600 mb-0.5">Hotline hỗ trợ:</p>
-                  <p className="text-xs font-semibold text-gray-900">{newsConfig.sidebar.contact.hotline}</p>
+                  <p className="text-xs text-gray-600 mb-0.5">
+                    Hotline hỗ trợ:
+                  </p>
+                  <p className="text-xs font-semibold text-gray-900">
+                    {newsConfig.sidebar.contact.hotline}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-2 pt-2 border-t border-gray-200">
-                <Clock size={14} className="text-gray-600 mt-0.5 flex-shrink-0" />
+                <Clock
+                  size={14}
+                  className="text-gray-600 mt-0.5 flex-shrink-0"
+                />
                 <div className="flex-1">
-                  <p className="text-xs text-gray-600 mb-0.5">Thời gian bảo trì:</p>
-                  <p className="text-xs font-semibold text-gray-900">{newsConfig.sidebar.contact.maintenance}</p>
+                  <p className="text-xs text-gray-600 mb-0.5">
+                    Thời gian bảo trì:
+                  </p>
+                  <p className="text-xs font-semibold text-gray-900">
+                    {newsConfig.sidebar.contact.maintenance}
+                  </p>
                 </div>
               </div>
             </div>
@@ -104,7 +125,11 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             {/* Footer Links */}
             <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-gray-500 pt-2 border-t border-gray-200">
               {navigation.footer.bottomLinks.map((link, idx) => (
-                <Link key={idx} href={link.href} className="hover:text-red-600 transition-colors">
+                <Link
+                  key={idx}
+                  href={link.href}
+                  className="hover:text-red-600 transition-colors"
+                >
                   {link.label}
                 </Link>
               ))}
@@ -114,7 +139,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
           {/* Main Content */}
           <div className="flex flex-col">
             {/* Breadcrumb */}
-            <div className="flex items-center text-sm text-gray-500 mb-4 gap-1">
+            <div className="flex items-center text-sm text-gray-500 mb-4 gap-1 ">
               <Link href="/" className="hover:text-red-600">
                 Trang chủ
               </Link>
@@ -132,9 +157,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
               {article.title}
             </h1>
-            <div className="text-xs text-gray-500 mb-6">
-              {publishedAt}
-            </div>
+            <div className="text-xs text-gray-500 mb-6">{publishedAt}</div>
 
             {/* Cover */}
             {article.cover && (
@@ -154,7 +177,15 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                   Kính gửi <strong>Đại Hiệp</strong>:
                 </p>
                 <p className="mb-4 indent-8">
-                  Để đảm bảo máy chủ hoạt động ổn định và chất lượng dịch vụ, tất cả các máy chủ sẽ tiến hành <strong>bảo trì phiên bản toàn bộ khu vực và máy chủ vào Thứ Ba, ngày 9 tháng 12 lúc 07:30</strong>, dự kiến bảo trì xong lúc <strong>10:30</strong>. Trong thời gian bảo trì máy chủ, tất cả các hoạt động trong game sẽ tạm dừng.
+                  Để đảm bảo máy chủ hoạt động ổn định và chất lượng dịch vụ,
+                  tất cả các máy chủ sẽ tiến hành{" "}
+                  <strong>
+                    bảo trì phiên bản toàn bộ khu vực và máy chủ vào Thứ Ba,
+                    ngày 9 tháng 12 lúc 07:30
+                  </strong>
+                  , dự kiến bảo trì xong lúc <strong>10:30</strong>. Trong thời
+                  gian bảo trì máy chủ, tất cả các hoạt động trong game sẽ tạm
+                  dừng.
                 </p>
                 <p className="mb-4 indent-8">
                   Số phiên bản client sau khi cập nhật: 2.646
@@ -165,10 +196,17 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     【Đại Lễ Hội Cuối Năm Sôi Động Khai Mở!】
                   </h2>
                   <p className="mb-4 indent-4">
-                    Chào đón năm mới, tạm biệt năm cũ. Sau khi bảo trì ngày 9 tháng 12 kết thúc, chúng ta sẽ chào đón Đại Lễ Hội Cuối Năm thường niên! Các hoạt động hấp dẫn như <strong>Cá Chép Hiện Thế</strong>, <strong>Bằng Hữu Quay Về</strong> và <strong>Nghê Thường Khởi Mộng</strong> đang chờ đón sự tham gia của quý vị Đại Hiệp!
+                    Chào đón năm mới, tạm biệt năm cũ. Sau khi bảo trì ngày 9
+                    tháng 12 kết thúc, chúng ta sẽ chào đón Đại Lễ Hội Cuối Năm
+                    thường niên! Các hoạt động hấp dẫn như{" "}
+                    <strong>Cá Chép Hiện Thế</strong>,{" "}
+                    <strong>Bằng Hữu Quay Về</strong> và{" "}
+                    <strong>Nghê Thường Khởi Mộng</strong> đang chờ đón sự tham
+                    gia của quý vị Đại Hiệp!
                   </p>
                   <p className="mb-4">
-                    → Chi tiết hoạt động Đại Lễ Hội Cuối Năm đã được đăng tải trên trang chủ, Đại Hiệp có thể nhấp vào đây để xem:{" "}
+                    → Chi tiết hoạt động Đại Lễ Hội Cuối Năm đã được đăng tải
+                    trên trang chủ, Đại Hiệp có thể nhấp vào đây để xem:{" "}
                     <a
                       href="https://jxsj.xoyo.com/show-3415-11838-1.html"
                       target="_blank"
@@ -192,10 +230,19 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     1、Cá Chép Hiện Thế, Phúc Lợi Tràn Đầy
                   </h3>
                   <p className="mb-2 indent-4">
-                    Thời gian hoạt động: Sau khi bảo trì ngày 9 tháng 12 kết thúc - 21:00 ngày 23 tháng 12
+                    Thời gian hoạt động: Sau khi bảo trì ngày 9 tháng 12 kết
+                    thúc - 21:00 ngày 23 tháng 12
                   </p>
                   <p className="mb-4 indent-4">
-                    Lễ hội nâng cấp, phúc lợi tối đa! Đại Hiệp nhận gói quà miễn phí hàng ngày, mua gói <strong>Trân Châu Bối</strong> siêu giá trị, sẽ có cơ hội nhận được phúc lợi miễn phí hóa đơn! Hơn nữa còn có thể tham gia rút thăm trúng thưởng <strong>một năm Lương Phiếu Kiếm Thế, danh hiệu giới hạn và dây chuyền ngọc trai vàng Chow Tai Fook</strong>!
+                    Lễ hội nâng cấp, phúc lợi tối đa! Đại Hiệp nhận gói quà miễn
+                    phí hàng ngày, mua gói <strong>Trân Châu Bối</strong> siêu
+                    giá trị, sẽ có cơ hội nhận được phúc lợi miễn phí hóa đơn!
+                    Hơn nữa còn có thể tham gia rút thăm trúng thưởng{" "}
+                    <strong>
+                      một năm Lương Phiếu Kiếm Thế, danh hiệu giới hạn và dây
+                      chuyền ngọc trai vàng Chow Tai Fook
+                    </strong>
+                    !
                   </p>
                   <div className="my-6">
                     <img
@@ -211,10 +258,17 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     2、Bằng Hữu Quay Về, Tái Nối Duyên Xưa
                   </h3>
                   <p className="mb-2 indent-4">
-                    Thời gian hoạt động: Sau khi bảo trì ngày 9 tháng 12 kết thúc - Ngày 9 tháng 1 năm sau
+                    Thời gian hoạt động: Sau khi bảo trì ngày 9 tháng 12 kết
+                    thúc - Ngày 9 tháng 1 năm sau
                   </p>
                   <p className="mb-4 indent-4">
-                    Mời bằng hữu quay về, sẽ có cơ hội nhận được số lượng lớn <strong>Kim Khóa, Ngân Khóa, Trân Châu Bối và Đá Hồn Ngũ Hành</strong>! Đồng thời, đảm nhận vai trò đội trưởng dẫn dắt Đại Hiệp tái xuất giang hồ tham gia hoạt động, sẽ có cơ hội nhận thêm <strong>Gói Quà Đội Trưởng</strong>!
+                    Mời bằng hữu quay về, sẽ có cơ hội nhận được số lượng lớn{" "}
+                    <strong>
+                      Kim Khóa, Ngân Khóa, Trân Châu Bối và Đá Hồn Ngũ Hành
+                    </strong>
+                    ! Đồng thời, đảm nhận vai trò đội trưởng dẫn dắt Đại Hiệp
+                    tái xuất giang hồ tham gia hoạt động, sẽ có cơ hội nhận thêm{" "}
+                    <strong>Gói Quà Đội Trưởng</strong>!
                   </p>
                 </div>
 
@@ -223,10 +277,14 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     3、Trang Phục Tinh Xảo, Giới Hạn Trở Lại
                   </h3>
                   <p className="mb-2 indent-4">
-                    Thời gian hoạt động cầu nguyện: Sau khi bảo trì ngày 9 tháng 12 kết thúc - 23:59 ngày 16 tháng 12
+                    Thời gian hoạt động cầu nguyện: Sau khi bảo trì ngày 9 tháng
+                    12 kết thúc - 23:59 ngày 16 tháng 12
                   </p>
                   <p className="mb-4 indent-4">
-                    Cuồng hoan cuối năm, trang phục tinh xảo giới hạn trở lại! Lần này không chỉ có cơ hội nhận được <strong>Thời trang hiếm</strong>, mà còn có cơ hội nhận được <strong>Trang phục thú cưỡi hiếm</strong>!
+                    Cuồng hoan cuối năm, trang phục tinh xảo giới hạn trở lại!
+                    Lần này không chỉ có cơ hội nhận được{" "}
+                    <strong>Thời trang hiếm</strong>, mà còn có cơ hội nhận được{" "}
+                    <strong>Trang phục thú cưỡi hiếm</strong>!
                   </p>
                   <div className="my-6 space-y-4">
                     <img
@@ -252,21 +310,37 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       1、Trang Bị Đồng Hành
                     </h3>
                     <p className="mb-4 indent-4">
-                      Sau bản cập nhật này, chúng tôi sẽ điều chỉnh các nội dung liên quan đến trang bị đồng hành như sau:
+                      Sau bản cập nhật này, chúng tôi sẽ điều chỉnh các nội dung
+                      liên quan đến trang bị đồng hành như sau:
                     </p>
                     <ul className="list-disc list-inside space-y-2 mb-4 indent-4">
                       <li>
-                        Thời gian đổi <strong>Mặt Dây Đồng Hành</strong> được điều chỉnh từ mở sau 120 ngày mở server thành mở ngay sau <strong>90 ngày</strong> mở server.
+                        Thời gian đổi <strong>Mặt Dây Đồng Hành</strong> được
+                        điều chỉnh từ mở sau 120 ngày mở server thành mở ngay
+                        sau <strong>90 ngày</strong> mở server.
                       </li>
                       <li>
-                        Thời gian đổi <strong>Phù Hộ Thân Đồng Hành</strong> được điều chỉnh từ mở sau 150 ngày mở server thành mở ngay sau <strong>90 ngày</strong> mở server.
+                        Thời gian đổi <strong>Phù Hộ Thân Đồng Hành</strong>{" "}
+                        được điều chỉnh từ mở sau 150 ngày mở server thành mở
+                        ngay sau <strong>90 ngày</strong> mở server.
                       </li>
                       <li>
-                        Tùy chọn tại NPC <strong>Dung Chú</strong> ở Phượng Tường Phủ đã được <strong>tích hợp và tối ưu hóa</strong>: Các tùy chọn ban đầu như "Xin hủy liên kết trang bị đồng hành" và "Hủy liên kết trang bị đồng hành" đã được chuyển đến mục "Thao tác liên quan đến trang bị đồng hành". Đồng thời, khi server mở được <strong>90 ngày</strong>, tùy chọn đổi Mặt Dây Đồng Hành và Phù Hộ Thân Đồng Hành sẽ được mở.
+                        Tùy chọn tại NPC <strong>Dung Chú</strong> ở Phượng
+                        Tường Phủ đã được{" "}
+                        <strong>tích hợp và tối ưu hóa</strong>: Các tùy chọn
+                        ban đầu như "Xin hủy liên kết trang bị đồng hành" và
+                        "Hủy liên kết trang bị đồng hành" đã được chuyển đến mục
+                        "Thao tác liên quan đến trang bị đồng hành". Đồng thời,
+                        khi server mở được <strong>90 ngày</strong>, tùy chọn
+                        đổi Mặt Dây Đồng Hành và Phù Hộ Thân Đồng Hành sẽ được
+                        mở.
                       </li>
                     </ul>
                     <p className="mb-4 indent-4">
-                      Các máy chủ khác nhau có thể có sự khác biệt về thời gian mở chức năng, Đại Hiệp vui lòng xem thông báo mở chức năng/nội dung liên quan của máy chủ mình tại <strong>Tuế Nguyệt Canh Điệt</strong>.
+                      Các máy chủ khác nhau có thể có sự khác biệt về thời gian
+                      mở chức năng, Đại Hiệp vui lòng xem thông báo mở chức
+                      năng/nội dung liên quan của máy chủ mình tại{" "}
+                      <strong>Tuế Nguyệt Canh Điệt</strong>.
                     </p>
                     <div className="my-6">
                       <img
@@ -276,7 +350,9 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       />
                     </div>
                     <p className="mb-4 indent-4">
-                      （4）Khi nhấp chuột phải để sử dụng <strong>Thiên Tàm Tơ (Cấp 1)</strong>, đã thêm tùy chọn: <strong>Đổi Tinh Thể Trang Bị Đồng Hành</strong>.
+                      （4）Khi nhấp chuột phải để sử dụng{" "}
+                      <strong>Thiên Tàm Tơ (Cấp 1)</strong>, đã thêm tùy chọn:{" "}
+                      <strong>Đổi Tinh Thể Trang Bị Đồng Hành</strong>.
                     </p>
                   </div>
 
@@ -285,10 +361,18 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       2、Phần Thưởng Quay Về Tái Xuất Giang Hồ
                     </h3>
                     <p className="mb-4 indent-4">
-                      Sau bản cập nhật này, chúng tôi sẽ nâng cấp và tối ưu hóa phần thưởng quay về, hiện tại người chơi quay về sẽ có cơ hội nhận được nhiều phần thưởng hơn! Điều chỉnh cụ thể như sau:
+                      Sau bản cập nhật này, chúng tôi sẽ nâng cấp và tối ưu hóa
+                      phần thưởng quay về, hiện tại người chơi quay về sẽ có cơ
+                      hội nhận được nhiều phần thưởng hơn! Điều chỉnh cụ thể như
+                      sau:
                     </p>
                     <p className="mb-4 indent-4">
-                      Đại Hiệp quay về thỏa mãn các điều kiện: thời gian mở server ≥ 30 ngày, đã gia nhập môn phái và cấp độ nhân vật ≥ 60, chưa đăng nhập liên tục ≥ 14 ngày, và cách lần kích hoạt Tái Xuất Giang Hồ gần nhất ≥ 30 ngày, khi đăng nhập nhân vật thỏa mãn điều kiện trên sẽ kích hoạt hoạt động <strong>Tái Xuất Giang Hồ</strong>.
+                      Đại Hiệp quay về thỏa mãn các điều kiện: thời gian mở
+                      server ≥ 30 ngày, đã gia nhập môn phái và cấp độ nhân vật
+                      ≥ 60, chưa đăng nhập liên tục ≥ 14 ngày, và cách lần kích
+                      hoạt Tái Xuất Giang Hồ gần nhất ≥ 30 ngày, khi đăng nhập
+                      nhân vật thỏa mãn điều kiện trên sẽ kích hoạt hoạt động{" "}
+                      <strong>Tái Xuất Giang Hồ</strong>.
                     </p>
 
                     <div className="my-4">
@@ -296,7 +380,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                         （1）Tối ưu hóa giao diện tinh gọn
                       </h4>
                       <p className="mb-4 indent-4">
-                        Nội dung phần thưởng Tái Xuất Giang Hồ chủ yếu được <strong>tinh giản và tích hợp thành ba phần</strong>: Đăng nhập 7 ngày, Giang Hồ Chinh Chiến Lệnh và Cửa Hàng Quay Về.
+                        Nội dung phần thưởng Tái Xuất Giang Hồ chủ yếu được{" "}
+                        <strong>tinh giản và tích hợp thành ba phần</strong>:
+                        Đăng nhập 7 ngày, Giang Hồ Chinh Chiến Lệnh và Cửa Hàng
+                        Quay Về.
                       </p>
                     </div>
 
@@ -305,10 +392,20 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                         （2）Đăng nhập 7 ngày, thêm phần thưởng!
                       </h4>
                       <p className="mb-2 indent-4">
-                        So với trước đây, Đại Hiệp quay về đăng nhập game mỗi ngày đều có thể nhận được <strong>số lượng lớn Phong Vân Tệ, Cống Hiến Gia Tộc, Kim Khóa, Ngân Khóa và Trân Châu Bối</strong>, có thể nhận tổng cộng 7 ngày!
+                        So với trước đây, Đại Hiệp quay về đăng nhập game mỗi
+                        ngày đều có thể nhận được{" "}
+                        <strong>
+                          số lượng lớn Phong Vân Tệ, Cống Hiến Gia Tộc, Kim
+                          Khóa, Ngân Khóa và Trân Châu Bối
+                        </strong>
+                        , có thể nhận tổng cộng 7 ngày!
                       </p>
                       <p className="mb-4 indent-4">
-                        Tổng cộng 7 ngày đăng nhập tích lũy có thể nhận được: <strong>96011 Phong Vân Tệ, 191151 Cống Hiến Gia Tộc, 21429 Kim Khóa, 549360 Ngân Khóa, 48292 Trân Châu Bối!</strong>
+                        Tổng cộng 7 ngày đăng nhập tích lũy có thể nhận được:{" "}
+                        <strong>
+                          96011 Phong Vân Tệ, 191151 Cống Hiến Gia Tộc, 21429
+                          Kim Khóa, 549360 Ngân Khóa, 48292 Trân Châu Bối!
+                        </strong>
                       </p>
                       <div className="my-6">
                         <img
@@ -324,10 +421,26 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                         （3）Hoạt động Giang Hồ Chinh Chiến Lệnh tinh giản!
                       </h4>
                       <p className="mb-2 indent-4">
-                        Hiện tại Đại Hiệp quay về chỉ cần tham gia <strong>Tiêu Dao Cốc, Quân Doanh, Lệnh Truy Nã Quan Phủ Mới, Tàng Bảo Đồ, Thừa Thiên Tháp, Tranh Đoạt Lãnh Thổ, Tống Kim Chiến Trường, Thần Binh Chiến Trường, Bạch Hổ Đường, Thái Hư Huyễn Cảnh, Anh Hùng Thách Đấu, Tần Thủy Hoàng Lăng, Vân Đỉnh Chi Chiến, Mộng Cảnh Bang Hội</strong> và <strong>Bang Hội Cạnh Võ</strong> là có thể nhận được số lượng lớn Phong Vân Tệ!
+                        Hiện tại Đại Hiệp quay về chỉ cần tham gia{" "}
+                        <strong>
+                          Tiêu Dao Cốc, Quân Doanh, Lệnh Truy Nã Quan Phủ Mới,
+                          Tàng Bảo Đồ, Thừa Thiên Tháp, Tranh Đoạt Lãnh Thổ,
+                          Tống Kim Chiến Trường, Thần Binh Chiến Trường, Bạch Hổ
+                          Đường, Thái Hư Huyễn Cảnh, Anh Hùng Thách Đấu, Tần
+                          Thủy Hoàng Lăng, Vân Đỉnh Chi Chiến, Mộng Cảnh Bang
+                          Hội
+                        </strong>{" "}
+                        và <strong>Bang Hội Cạnh Võ</strong> là có thể nhận được
+                        số lượng lớn Phong Vân Tệ!
                       </p>
                       <p className="mb-4 indent-4 text-sm text-gray-600 italic">
-                        *Lưu ý: Các hoạt động thuộc Giang Hồ Chinh Chiến Lệnh của mỗi máy chủ sẽ khác nhau tùy thuộc vào thời gian mở máy chủ hiện tại, Đại Hiệp vui lòng xem hoạt động được hiển thị trong Giang Hồ Chinh Chiến Lệnh trong game. Đồng thời, có thể truy cập <strong>Kiếm Hiệp Lịch - Tuế Nguyệt Canh Điệt</strong> để biết thời gian mở các hoạt động của máy chủ hiện tại.
+                        *Lưu ý: Các hoạt động thuộc Giang Hồ Chinh Chiến Lệnh
+                        của mỗi máy chủ sẽ khác nhau tùy thuộc vào thời gian mở
+                        máy chủ hiện tại, Đại Hiệp vui lòng xem hoạt động được
+                        hiển thị trong Giang Hồ Chinh Chiến Lệnh trong game.
+                        Đồng thời, có thể truy cập{" "}
+                        <strong>Kiếm Hiệp Lịch - Tuế Nguyệt Canh Điệt</strong>{" "}
+                        để biết thời gian mở các hoạt động của máy chủ hiện tại.
                       </p>
                       <div className="my-6">
                         <img
@@ -343,10 +456,20 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                         （4）Cửa Hàng Quay Về
                       </h4>
                       <p className="mb-2 indent-4">
-                        Cửa Hàng Quay Về bao gồm Cửa Hàng Thẻ Tháng (cần mua Thẻ Tháng và trong thời gian Thẻ Tháng có hiệu lực), Cửa Hàng Trân Châu Bối và Cửa Hàng Phong Vân Tệ. So với trước đây, số lượng phần thưởng có thể đổi trong Cửa Hàng Thẻ Tháng và Trân Châu Bối đã tăng đáng kể!
+                        Cửa Hàng Quay Về bao gồm Cửa Hàng Thẻ Tháng (cần mua Thẻ
+                        Tháng và trong thời gian Thẻ Tháng có hiệu lực), Cửa
+                        Hàng Trân Châu Bối và Cửa Hàng Phong Vân Tệ. So với
+                        trước đây, số lượng phần thưởng có thể đổi trong Cửa
+                        Hàng Thẻ Tháng và Trân Châu Bối đã tăng đáng kể!
                       </p>
                       <p className="mb-4 indent-4 text-sm text-gray-600 italic">
-                        *Lưu ý: Nội dung phần thưởng có thể đổi trong Cửa Hàng Quay Về của mỗi máy chủ sẽ khác nhau tùy thuộc vào nội dung hiện tại của máy chủ đó, Đại Hiệp vui lòng xem nội dung có thể đổi trong Cửa Hàng Quay Về trong game. Đồng thời, có thể truy cập <strong>Kiếm Hiệp Lịch - Tuế Nguyệt Canh Điệt</strong> để biết giai đoạn mở các chức năng của máy chủ hiện tại.
+                        *Lưu ý: Nội dung phần thưởng có thể đổi trong Cửa Hàng
+                        Quay Về của mỗi máy chủ sẽ khác nhau tùy thuộc vào nội
+                        dung hiện tại của máy chủ đó, Đại Hiệp vui lòng xem nội
+                        dung có thể đổi trong Cửa Hàng Quay Về trong game. Đồng
+                        thời, có thể truy cập{" "}
+                        <strong>Kiếm Hiệp Lịch - Tuế Nguyệt Canh Điệt</strong>{" "}
+                        để biết giai đoạn mở các chức năng của máy chủ hiện tại.
                       </p>
                       <div className="my-6 space-y-4">
                         <img
@@ -373,7 +496,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       3、Phụ bản Cổ Thành Lâu Lan
                     </h3>
                     <p className="mb-4 indent-4">
-                      Sau bản cập nhật này, khi Đại Hiệp vượt qua phụ bản <strong>Cổ Thành Lâu Lan</strong>, ngay cả khi đội giải tán, vẫn có thể nói chuyện với <strong>Thẩm Hà Diệp</strong> để rời khỏi phụ bản.
+                      Sau bản cập nhật này, khi Đại Hiệp vượt qua phụ bản{" "}
+                      <strong>Cổ Thành Lâu Lan</strong>, ngay cả khi đội giải
+                      tán, vẫn có thể nói chuyện với{" "}
+                      <strong>Thẩm Hà Diệp</strong> để rời khỏi phụ bản.
                     </p>
                   </div>
 
@@ -382,7 +508,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       4、Hoạt động hàng tháng - Người Tuyết Vui Vẻ
                     </h3>
                     <p className="mb-4 indent-4">
-                      Sau bản cập nhật này, NPC <strong>Siêu Người Tuyết</strong> của hoạt động hàng tháng - Người Tuyết Vui Vẻ, trong mục nhận thưởng tích điểm đã thêm tùy chọn "<strong>Nhận một lần</strong>".
+                      Sau bản cập nhật này, NPC{" "}
+                      <strong>Siêu Người Tuyết</strong> của hoạt động hàng tháng
+                      - Người Tuyết Vui Vẻ, trong mục nhận thưởng tích điểm đã
+                      thêm tùy chọn "<strong>Nhận một lần</strong>".
                     </p>
                     <div className="my-6">
                       <img
@@ -398,14 +527,20 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                       5、Độ mạnh BOSS
                     </h3>
                     <p className="mb-4 indent-4">
-                      Sau bản cập nhật này, sẽ có sự điều chỉnh thích hợp đối với độ mạnh của <strong>BOSS Võ Lâm Cao Thủ</strong> ở máy chủ <strong>Long Chiến Vu Dã</strong>, để phù hợp hơn với nhịp độ game hiện tại.
+                      Sau bản cập nhật này, sẽ có sự điều chỉnh thích hợp đối
+                      với độ mạnh của <strong>BOSS Võ Lâm Cao Thủ</strong> ở máy
+                      chủ <strong>Long Chiến Vu Dã</strong>, để phù hợp hơn với
+                      nhịp độ game hiện tại.
                     </p>
                   </div>
                 </div>
 
                 <div className="my-8 pt-6 border-t border-gray-200">
                   <p className="mb-4 indent-4 italic text-gray-700">
-                    Giang hồ dù xa, có bạn không cô độc; đao kiếm vô tình, vì yêu mà vô úy. Hồi tưởng giang hồ kinh điển, tái tạo truyền kỳ võ lâm, <strong>《Kiếm Hiệp Thế Giới》</strong> mở ra cuộc đời mới của bạn.
+                    Giang hồ dù xa, có bạn không cô độc; đao kiếm vô tình, vì
+                    yêu mà vô úy. Hồi tưởng giang hồ kinh điển, tái tạo truyền
+                    kỳ võ lâm, <strong>《Kiếm Hiệp Thế Giới》</strong> mở ra
+                    cuộc đời mới của bạn.
                   </p>
                   <p className="text-right text-gray-600">
                     Đội ngũ vận hành 【Kiếm Hiệp Thế Giới】
@@ -419,4 +554,3 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
     </section>
   );
 }
-

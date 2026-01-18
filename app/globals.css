@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif:wght@400;600;700&display=swap");
 @import "tailwindcss";
 
 @layer base {
   html {
-    font-family: 'Cormorant Garamond','kiemhiep', 'Noto Serif', serif;
+    font-family: "Cormorant Garamond", "kiemhiep", "Noto Serif", serif;
   }
 }
 
 @layer components {
-
   /* Custom button styles */
   .btn-primary {
     @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
@@ -34,18 +33,17 @@
 }
 
 @layer utilities {
-
   /* Text shadows */
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .font-kiem-hiep {
-    font-family: 'kiemhiep', 'Cormorant Garamond', serif;
+    font-family: "kiemhiep", "Cormorant Garamond", serif;
   }
 
   .font-body {
-    font-family: 'Noto Serif', serif;
+    font-family: "Noto Serif", serif;
   }
 
   .writing-vertical-lr {
@@ -94,7 +92,6 @@
   background-repeat: no-repeat;
   background-size: 1200px;
 }
-
 
 .sx-list {
   top: 100px;
