@@ -1,0 +1,47 @@
+{
+  "title": "Giới thiệu game",
+  "subtitle": "Khám phá thế giới giang hồ rực rỡ",
+  "screenshots": [
+    { "src": "/game-screenshot-1.jpg", "alt": "Ảnh gameplay 1" },
+    { "src": "/game-screenshot-2.jpg", "alt": "Ảnh gameplay 2" }
+  ],
+  "careerPaths": {
+    "title": "Đường phát triển môn phái",
+    "paths": [
+      {
+        "id": "sword",
+        "title": "Đao Nhất Phẩm Đường",
+        "subtitle": "Kiếm thuật tinh thông, nghĩa hiệp chính trực",
+        "image": "/sword-sect.jpg",
+        "description": "Nhất Phẩm Đường do vua Tây Hạ Lý Nguyên Hạo sáng lập để chống Tống, âm thầm phát triển và nay trỗi dậy để khuếch trương thanh thế."
+      },
+      {
+        "id": "fist",
+        "title": "Quyền Nhất Phẩm Đường",
+        "subtitle": "Quyền pháp cương mãnh, tiến công không lùi",
+        "image": "/fist-sect.jpg",
+        "description": "Thừa kế võ học hoàng thất Tây Hạ, quyền pháp cương mãnh, lấy khí thắng lực, luyện đến cảnh giới có thể khai sơn phá thạch."
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": "speed",
+      "title": "Chiến đấu tốc độ cao",
+      "description": "Trải nghiệm mượt mà, cảm nhận ân oán giang hồ",
+      "iconType": "speed"
+    },
+    {
+      "id": "multiplayer",
+      "title": "Nhiều người chơi",
+      "description": "Cùng hàng triệu người khám phá thế giới võ lâm",
+      "iconType": "multiplayer"
+    },
+    {
+      "id": "graphics",
+      "title": "Đồ họa tinh xảo",
+      "description": "Hiệu ứng mãn nhãn, trải nghiệm nhập vai chân thực",
+      "iconType": "graphics"
+    }
+  ]
+}

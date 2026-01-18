@@ -1,0 +1,22 @@
+{
+  "hotNewsTitle": "[HOT] Đại Tiệc Cuối Năm - Nhận Quà Mỏi Tay",
+  "tabs": ["Mới Nhất", "Thông Báo", "Tin Tức", "Sự Kiện"],
+  "sidebar": {
+    "promotions": [
+      {
+        "title": "9/12 Vui Chơi Thỏa Thích",
+        "subtitle": "Dây Chuyền Vàng • Phiếu Lương 1 Năm • Danh Hiệu Tùy Chỉnh",
+        "image": "/news/2025/1208/20251208122350299.jpg"
+      },
+      {
+        "title": "Tương Khắc Song Hành",
+        "subtitle": "Rồng Bay Bốn Biển, Hổ Gầm Tám Phương",
+        "image": "/news/2025/1009/20251009115810501.png"
+      }
+    ],
+    "contact": {
+      "hotline": "028-85437733",
+      "maintenance": "Thứ Ba hàng tuần 7:30-10:30"
+    }
+  }
+}

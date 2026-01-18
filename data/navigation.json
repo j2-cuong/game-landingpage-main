@@ -1,0 +1,36 @@
+{
+  "topBar": {
+    "links": [
+      { "label": "Đăng nhập", "href": "#" },
+      { "label": "Đăng ký tài khoản", "href": "#" },
+      { "label": "Nạp tài khoản", "href": "#" },
+      { "label": "Danh sách dịch vụ", "href": "#", "hasDropdown": true },
+      { "label": "Danh sách game", "href": "#", "hasDropdown": true, "highlight": true }
+    ]
+  },
+  "header": {
+    "navItems": [
+      { "label": "Trang chủ", "href": "/", "isExternal": false },
+      { "label": "Tin tức", "href": "/news", "isExternal": false },
+      { "label": "Nạp tài khoản", "href": "#", "isExternal": false },
+      { "label": "Danh sách dịch vụ", "href": "#", "isExternal": false },
+      { "label": "Danh sách game", "href": "#", "isExternal": false },
+      { "label": "Diễn đàn chính thức", "href": "#", "isExternal": false }
+    ]
+  },
+  "footer": {
+    "supportLinks": [
+      { "label": "Về chúng tôi", "href": "#" },
+      { "label": "Điều khoản dịch vụ", "href": "#" },
+      { "label": "Trung tâm hỗ trợ", "href": "#" },
+      { "label": "Liên hệ", "href": "#" },
+      { "label": "Tuyển dụng", "href": "#" }
+    ],
+    "bottomLinks": [
+      { "label": "Khôi phục mật khẩu", "href": "#" },
+      { "label": "An toàn tài khoản", "href": "#" },
+      { "label": "Liên hệ CSKH", "href": "#" },
+      { "label": "Bổ sung chống nghiện", "href": "#" }
+    ]
+  }
+}

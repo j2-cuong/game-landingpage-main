@@ -1,0 +1,32 @@
+[
+    {
+        "id": "hd_tj",
+        "title": "Tương Khắc Song Hành",
+        "subtitle": "Phiên bản mới chính thức ra mắt hôm nay!",
+        "image": "/hd_tj.jpg"
+    },
+    {
+        "id": "hd_ts_1",
+        "title": "Tinh Hoa Họa Phổ",
+        "subtitle": "Tranh nguyên tác tuyệt mỹ – Khám phá ngay",
+        "image": "/hd_ts_1.jpg"
+    },
+    {
+        "id": "hd_ts_2",
+        "title": "Wallpaper Kỳ Sơn",
+        "subtitle": "Tải ngay bộ nền kiến trúc huyền ảo",
+        "image": "/hd_ts_2.jpg"
+    },
+    {
+        "id": "hd_zy_1",
+        "title": "Chiến Lược Tân Thủ",
+        "subtitle": "Lên đường nhanh, nhận quà tân thủ",
+        "image": "/hd_zy_1.jpg"
+    },
+    {
+        "id": "hd_zy_2",
+        "title": "Bí Kíp Cao Thủ",
+        "subtitle": "Nâng tầm kỹ năng, tiến bậc cao nhân",
+        "image": "/hd_zy_2.jpg"
+    }
+]

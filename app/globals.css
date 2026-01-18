@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Cormorant Garamond','kiemhiep', 'Noto Serif', serif;
+  }
+}
+
+@layer components {
+
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+
+  /* Text shadows */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .font-kiem-hiep {
+    font-family: 'kiemhiep', 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Noto Serif', serif;
+  }
+
+  .writing-vertical-lr {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+
+  /* Gradient backgrounds */
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+
+  /* Custom colors from Figma design */
+  .text-primary {
+    color: #dd201e;
+  }
+
+  .bg-primary {
+    background-color: #dd201e;
+  }
+
+  .border-primary {
+    border-color: #dd201e;
+  }
+}
+
+.title-mp {
+  top: 28px;
+  width: 1200px;
+  height: 70px;
+  background-position: 0 5px;
+}
+
+.t {
+  text-indent: -9999em;
+  overflow: hidden;
+}
+
+.pa {
+  position: absolute;
+}
+
+.mp-icons {
+  display: block;
+  background-image: url(/mp_icons.png);
+  background-repeat: no-repeat;
+  background-size: 1200px;
+}
+
+
+.sx-list {
+  top: 100px;
+  left: 50px;
+  width: 104px;
+}
+
+.sx-list li {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 105px;
+  height: 105px;
+  transform: scale(0.85);
+  cursor: pointer;
+  margin: 0px auto;
+}
+
+.t {
+  text-indent: -9999em;
+  overflow: hidden;
+}
+
+.sx-list li.active {
+  transform: scale(1);
+}

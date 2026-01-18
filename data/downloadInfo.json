@@ -1,0 +1,85 @@
+{
+  "pcApp": {
+    "title": "Tải xuống ứng dụng PC",
+    "version": "v1.4.0",
+    "size": "142MB",
+    "updateDate": "14 tháng 9, 2023",
+    "launcherUrl": "#",
+    "cloudGameUrl": "#",
+    "qrNote": "Quét mã để trải nghiệm\\Tải xuống đám mây",
+    "webVersionUrl": "#",
+    "functionDetailUrl": "#",
+    "androidNote": "Nếu trình duyệt mặc định trên điện thoại Android không thể tải xuống, vui lòng sao chép liên kết vào trình duyệt khác trên điện thoại để tải xuống"
+  },
+  "miniApp": {
+    "title": "Kiếm Hiệp Tiểu Thanh",
+    "version": "1.11.136 (Build 1400)",
+    "size": "100.2M",
+    "updateDate": "29 tháng 12, 2023",
+    "description": "Độc đáo, chơi nhẹ nhàng, game võ hiệp 2D phong cách Trung Hoa \"Kiếm Hiệp Thế Giới\" tập trung tạo ra trải nghiệm võ hiệp nhẹ nhàng cho dân văn phòng.\nHiện đã ra mắt trợ lý di động \"Kiếm Hiệp Tiểu Thanh\", mang đến cho các đại hiệp trải nghiệm chơi \"Kiếm Hiệp Thế Giới\" trên điện thoại một cách nhẹ nhàng.\nKết nối liền mạch giữa thiết bị di động và máy tính, tương tác chat theo thời gian thực, các hoạt động thú vị với phần thưởng phong phú, chức năng quản lý tiện lợi và ưu đãi hơn, mang đến cho bạn trải nghiệm giang hồ tự do, giao tiếp không ngừng!",
+    "androidNote": "Nếu trình duyệt mặc định trên điện thoại Android không thể tải xuống, vui lòng sao chép liên kết vào trình duyệt khác trên điện thoại để tải xuống,"
+  },
+  "managerApp": {
+    "title": "Quản lý game Tây Sơn Cư",
+    "iosUrl": "#",
+    "androidUrl": "#",
+    "features": [
+      "1. Quản lý game Tây Sơn Cư là một công cụ tổng hợp dịch vụ và bảo mật game hoàn chỉnh.",
+      "2. Bao gồm dịch vụ bảo mật do ứng dụng token điện thoại Kingsoft cung cấp, ngoài ra còn có dịch vụ quản lý và truy vấn tài khoản, dịch vụ nạp tiền game, v.v.",
+      "3. Khi liên kết tài khoản với Quản lý game Tây Sơn Cư, sẽ tự động hủy liên kết các công cụ bảo mật khác.",
+      "4. Mỗi quản lý game có thể liên kết tối đa 20 tài khoản."
+    ],
+    "supportedGames": "Dịch vụ bảo mật：《Kiếm Hiệp Thế Giới》、《Kiếm Võng 2 - Khu miễn phí》、《Kiếm Hiệp 2 Ngoại Truyện》；\nDịch vụ thao tác an toàn, nạp tiền và truy vấn：Tất cả các game được hỗ trợ bởi các chức năng tương ứng của Tiêu Dao Võng."
+  },
+  "clients": [
+    {
+      "id": "full",
+      "type": "Phiên bản đầy đủ",
+      "version": "Nhật Nguyệt Tranh Phong",
+      "size": "14.4GB",
+      "updateDate": "14 tháng 10, 2025",
+      "md5": "8174a48338b50b607cfdd41a906a203a",
+      "url": "#"
+    },
+    {
+      "id": "mini",
+      "type": "Phiên bản nhỏ",
+      "version": "Nhật Nguyệt Tranh Phong",
+      "size": "272M",
+      "updateDate": "14 tháng 10, 2025",
+      "md5": "890aff28c89025b7fd3971f010fd3654",
+      "url": "#"
+    }
+  ],
+  "recommendedSoftware": [
+    {
+      "id": "yy",
+      "name": "YY Voice",
+      "description": "Giải phóng đôi tay, giao tiếp vô hạn, mang đến cho bạn trải nghiệm người dùng tốt hơn！",
+      "url": "#"
+    },
+    {
+      "id": "antivirus",
+      "name": "Kingsoft Antivirus",
+      "description": "Bảo vệ an toàn tài khoản game, chat QQ ổn định và mượt mà！",
+      "url": "#"
+    }
+  ],
+  "faq": [
+    {
+      "id": "md5",
+      "question": "Mã MD5 là gì",
+      "answer": "Mã MD5 được sử dụng để kiểm tra file, mỗi file chỉ có một mã MD5 duy nhất. Điều này có thể xác minh xem phần mềm có bị thay đổi hoặc cài đặt trojan, virus trong quá trình phát hành hay không, để đảm bảo an toàn cho người dùng khi sử dụng phần mềm trong quá trình sử dụng. Công cụ kiểm tra MD5 là phần mềm để xem MD5 của file, thường dùng là WinMD5."
+    },
+    {
+      "id": "install",
+      "question": "Cách cài đặt game",
+      "url": "#"
+    },
+    {
+      "id": "newbie",
+      "question": "Xem hướng dẫn cho người mới",
+      "url": "#"
+    }
+  ]
+}
