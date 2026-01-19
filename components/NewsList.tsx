@@ -37,7 +37,7 @@ export default function NewsList() {
             <span className="text-xl font-bold text-gray-900">Trung tâm tin tức</span>
           </div>
           <div className="text-sm text-gray-500">
-            Vị trí của bạn: Trang chủ &gt; Danh sách tin &gt; {activeCategory || "Tất cả"}
+            Trang chủ &gt; Danh sách tin &gt; {activeCategory || "Tất cả"}
           </div>
         </div>
 
@@ -48,9 +48,8 @@ export default function NewsList() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-3 text-base font-bold border-b-2 ${
-                  isActive ? "text-red-600 border-red-600" : "text-gray-600 border-transparent"
-                }`}
+                className={`px-6 py-3 text-base font-bold border-b-2 ${isActive ? "text-red-600 border-red-600" : "text-gray-600 border-transparent"
+                  }`}
               >
                 {cat.label}
               </button>
@@ -78,9 +77,8 @@ export default function NewsList() {
           {[1, 2, 3, 4, 5, 6, 7].map((page) => (
             <button
               key={page}
-              className={`w-9 h-9 border border-gray-300 rounded ${
-                page === 1 ? "bg-gray-700 text-white" : "text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`w-9 h-9 border border-gray-300 rounded ${page === 1 ? "bg-gray-700 text-white" : "text-gray-700 hover:bg-gray-50"
+                }`}
             >
               {page}
             </button>

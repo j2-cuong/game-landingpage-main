@@ -6,6 +6,11 @@ export interface QuickAction {
     gradient: string;
     background: string;
     href: string;
+    bgImage?: string;
+    extraInfo?: {
+        left: { value: string; label: string };
+        right: { value: string; label: string };
+    };
 }
 
 export interface BannerItem {
@@ -20,7 +25,9 @@ export interface NewsItem {
     category: string;
     title: string;
     date: string;
+    author?: string; // Tên tác giả
     isHot?: boolean;
+    isNew?: boolean; // Mới cập nhật
 }
 
 export interface ArticleItem extends NewsItem {
@@ -77,12 +84,14 @@ export function getArticleBySlug(slug: string): ArticleItem | undefined {
 
 export const NEWS_DATA: NewsItem[] = ARTICLES_DATA
     .filter(article => article.showOnHomepage !== false)
-    .map(({ id, category, title, date, isHot }) => ({
+    .map(({ id, category, title, date, isHot, isNew, author }) => ({
         id,
         category,
         title,
         date,
         isHot,
+        isNew,
+        author,
     }));
 
 export const ACTIVITIES_ONGOING: ActivityItem[] = (activitiesData as ActivityItem[]).filter(a => a.type === 'ongoing');
