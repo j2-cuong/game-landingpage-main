@@ -12,6 +12,7 @@ import {
   Flame,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 import {
   QUICK_ACTIONS,
   NEWS_TABS,
@@ -50,7 +51,8 @@ function ActionButton({ item }: { item: QuickAction }) {
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
-      className={`w-full flex-1 mb-0 rounded flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-lg border-2 border-yellow-600/30 ${!item.bgImage ? `${item.gradient} ${item.background}` : ""
+      whileHover={{ y: -4 }}
+      className={`w-full flex-1 mb-0 rounded-lg flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-md transition-all duration-300 border border-white/10 ${!item.bgImage ? `${item.gradient} ${item.background}` : ""
         }`}
       style={{
         backgroundImage: item.bgImage ? `url(${item.bgImage})` : undefined,
@@ -60,25 +62,25 @@ function ActionButton({ item }: { item: QuickAction }) {
       onClick={handleClick}
     >
       {/* Glossy overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
 
       {/* Main Content Area */}
-      <div className={`flex flex-col items-center justify-center w-full ${isDownload ? 'h-3/4' : 'h-full'}`}>
+      <div className={`flex flex-col items-center justify-center w-full z-10 ${isDownload ? 'h-3/4' : 'h-full'}`}>
         {!isDownload && (
-          <div className="text-white mb-2 drop-shadow-md scale-125">
-            {getQuickActionIcon(item.iconName, 32)}
+          <div className="text-white mb-2 drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500">
+            {getQuickActionIcon(item.iconName, 36)}
           </div>
         )}
 
         <div className="flex flex-col items-center">
-          <span className={`font-kiem-hiep leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${isDownload
-              ? "text-5xl text-yellow-400 italic tracking-wider font-bold"
-              : "text-xl font-bold uppercase text-white"
+          <span className={`font-kiem-hiep leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ${isDownload
+            ? "text-5xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
+            : "text-xl font-bold uppercase text-white group-hover:tracking-widest"
             }`}>
             {item.label}
           </span>
           {!isDownload && (
-            <span className="text-xs opacity-80 font-sans mt-1 text-white uppercase tracking-tighter">
+            <span className="text-[10px] opacity-70 font-sans mt-1 text-white uppercase tracking-tighter group-hover:opacity-100 transition-opacity">
               {item.sub}
             </span>
           )}
@@ -87,20 +89,20 @@ function ActionButton({ item }: { item: QuickAction }) {
 
       {/* Special Bottom Section for Download */}
       {isDownload && item.extraInfo && (
-        <div className="w-full h-1/4 bg-black/40 backdrop-blur-sm border-t border-yellow-500/30 flex items-center divide-x divide-yellow-500/20">
+        <div className="w-full h-1/4 bg-black/30 backdrop-blur-md border-t border-white/10 flex items-center divide-x divide-white/10 z-10">
           <div className="flex-1 flex flex-col items-center justify-center leading-none">
-            <span className="text-yellow-500 font-bold text-lg">{item.extraInfo.left.value}</span>
-            <span className="text-[10px] text-gray-300 uppercase">{item.extraInfo.left.label}</span>
+            <span className="text-amber-400 font-bold text-lg">{item.extraInfo.left.value}</span>
+            <span className="text-[9px] text-white/60 uppercase font-medium">{item.extraInfo.left.label}</span>
           </div>
           <div className="flex-1 flex flex-col items-center justify-center leading-none">
-            <span className="text-yellow-500 font-bold text-lg">{item.extraInfo.right.value}</span>
-            <span className="text-[10px] text-gray-300 uppercase">{item.extraInfo.right.label}</span>
+            <span className="text-amber-400 font-bold text-lg">{item.extraInfo.right.value}</span>
+            <span className="text-[9px] text-white/60 uppercase font-medium">{item.extraInfo.right.label}</span>
           </div>
         </div>
       )}
 
       {/* Hover Light Effect */}
-      <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />
     </motion.button>
   );
 }
@@ -134,12 +136,12 @@ function TabItem({
   return (
     <button
       onClick={onClick}
-      className="relative px-5 py-3 font-bold transition-colors font-kiem-hiep text-base uppercase"
+      className={`relative px-6 py-4 font-bold transition-all font-kiem-hiep text-lg uppercase tracking-wider ${active ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
       style={{ color: activeColor }}
     >
       {active && (
         <span
-          className="absolute left-1 top-1/2 -translate-y-1/2 text-xs"
+          className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] animate-pulse"
           style={{ color: activeColor }}
         >
           ◆
@@ -149,7 +151,7 @@ function TabItem({
       {active && (
         <motion.div
           layoutId="newsTabUnderline"
-          className="absolute bottom-0 left-2 right-2 h-0.5"
+          className="absolute bottom-1 left-2 right-2 h-[3px] rounded-full shadow-[0_-2px_8px_rgba(0,0,0,0.1)]"
           style={{ backgroundColor: activeColor }}
         />
       )}
@@ -199,10 +201,10 @@ export default function NewsActivitySection() {
         </div>
 
         {/* Right Column: News Table (Expanded to 10 cols) */}
-        <div className="col-span-10 bg-white border border-gray-200 rounded shadow-sm flex flex-col min-h-[400px]">
+        <div className="col-span-10 bg-white border border-slate-100 rounded-lg shadow-sm flex flex-col min-h-[400px] overflow-hidden">
           {/* Header Tabs */}
-          <div className="flex items-center justify-between px-4 pt-2 border-b border-gray-100 bg-gray-50/50">
-            <div className="flex space-x-2">
+          <div className="flex items-center justify-between px-6 pt-1 border-b border-slate-50 bg-[#fbfcfd]">
+            <div className="flex space-x-0">
               {NEWS_TABS.map((tab, idx) => (
                 <TabItem
                   key={tab}
@@ -213,13 +215,13 @@ export default function NewsActivitySection() {
               ))}
             </div>
 
-            <a href="/news" className="text-sm text-gray-400 hover:text-[#b92b27] mr-2 flex items-center gap-1 transition-colors">
-              Xem thêm <ChevronRight size={14} />
-            </a>
+            <Link href="/news" className="text-sm font-bold font-kiem-hiep text-slate-400 hover:text-red-600 mr-2 flex items-center gap-1 transition-all hover:translate-x-1">
+              XEM THÊM <ChevronRight size={16} />
+            </Link>
           </div>
 
           {/* News Table List */}
-          <div className="flex-1 p-4 flex flex-col">
+          <div className="flex-1 p-6 flex flex-col">
 
 
             <div className="flex-1 space-y-1">
@@ -230,54 +232,40 @@ export default function NewsActivitySection() {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05, duration: 0.2 }}
-                    className="grid grid-cols-12 gap-2 items-center py-2.5 px-2 hover:bg-gray-50 rounded transition-colors group cursor-pointer border-b border-gray-50 last:border-0"
+                    className="flex items-center gap-4 py-3 px-5 bg-white border border-slate-100 rounded-lg hover:border-red-100 hover:shadow-md hover:bg-slate-50/30 transition-all group cursor-pointer"
                   >
-                    {/* Category */}
-                    <div className="col-span-2">
+                    {/* Robinhood Style Tag */}
+                    <div className="flex-shrink-0">
                       <span
-                        className={`text-xs font-bold font-kiem-hiep py-0.5 px-2 rounded border
-                        ${news.category === "Sự kiện" || news.category === "Thông báo"
-                            ? "animate-pulse border-red-200 text-[#b92b27] bg-red-50"
-                            : "border-gray-200 text-gray-500 bg-gray-100"
+                        className={`text-[10px] font-bold font-sans uppercase tracking-[0.05em] py-1 px-3 rounded-full
+                        ${news.category === "Sự kiện"
+                            ? "text-amber-600 bg-amber-50"
+                            : news.category === "Thông báo"
+                              ? "text-blue-600 bg-blue-50"
+                              : "text-green-600 bg-green-50"
                           }`}
                       >
-                        [{news.category}]
+                        {news.category}
                       </span>
                     </div>
 
-                    {/* Title */}
-                    <div className="col-span-7 min-w-0 pr-4">
-                      <div className="flex items-center">
-                        <span className="truncate group-hover:text-[#b92b27] transition-colors text-gray-700 font-medium text-[15px]">
-                          {news.title}
+                    {/* Title Content */}
+                    <div className="flex-1 min-w-0 flex items-center gap-3">
+                      <h3 className="truncate text-slate-700 font-bold text-lg font-kiem-hiep group-hover:text-red-700 transition-colors">
+                        {news.title}
+                      </h3>
+
+                      {news.isHot && (
+                        <span className="flex-shrink-0 inline-flex items-center text-[9px] font-bold text-white bg-red-600 px-1.5 py-0.5 rounded-md shadow-sm animate-pulse">
+                          HOT
                         </span>
-
-                        {/* Tags */}
-                        {news.isHot && (
-                          <span className="ml-2 inline-flex items-center text-[10px] uppercase font-bold text-white bg-gradient-to-r from-orange-500 to-red-500 px-1.5 py-0.5 rounded shadow-sm animate-bounce duration-2000">
-                            <Flame size={10} className="mr-0.5" fill="currentColor" /> HOT
-                          </span>
-                        )}
-                        {news.isNew && (
-                          <span className="ml-2 inline-flex items-center text-[10px] uppercase font-bold text-white bg-gradient-to-r from-blue-400 to-blue-600 px-1.5 py-0.5 rounded shadow-sm">
-                            <Zap size={10} className="mr-0.5" fill="currentColor" /> NEW
-                          </span>
-                        )}
-                      </div>
+                      )}
                     </div>
 
-                    {/* Author */}
-                    <div className="col-span-2">
-                      <span className="text-xs text-gray-500 font-medium flex items-center">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-2 group-hover:bg-[#b92b27] transition-colors"></span>
-                        {news.author || "Admin"}
-                      </span>
-                    </div>
-
-                    {/* Date */}
-                    <div className="col-span-1 text-right">
-                      <span className="text-sm text-gray-400 font-sans tabular-nums">
-                        {news.date.split('-').slice(1).join('/')}
+                    {/* Clean Date (No Author) */}
+                    <div className="flex-shrink-0 text-right ml-4">
+                      <span className="text-sm text-slate-400 font-sans font-medium tabular-nums group-hover:text-slate-600">
+                        {news.date.split('-').slice(1).reverse().join('/')}
                       </span>
                     </div>
                   </motion.div>
@@ -328,14 +316,19 @@ export default function NewsActivitySection() {
         </div>
 
         {/* Activity Section (Bottom) */}
-        <div className="col-span-12 bg-white p-4 mt-2">
-          <div className="flex items-center mb-4 border-l-4 border-[#b92b27] pl-3">
-            <h2 className="text-2xl font-bold font-kiem-hiep text-gray-800 mr-6">
-              Hoạt động hàng ngày
+        <div className="col-span-12 bg-white p-8 mt-4 rounded-lg border border-slate-100 shadow-sm">
+          <div className="flex items-center justify-between mb-8 border-l-4 border-red-600 pl-4">
+            <h2 className="text-3xl font-bold font-kiem-hiep text-slate-900 tracking-wide uppercase">
+              Hoạt động thế giới
             </h2>
+            <div className="flex gap-2">
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse delay-75"></span>
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse delay-150"></span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {(activeActivityTab === "ongoing"
               ? ACTIVITIES_ONGOING
               : ACTIVITIES_LONGTERM
@@ -345,8 +338,8 @@ export default function NewsActivitySection() {
               .map((act) => (
                 <motion.div
                   key={act.id}
-                  whileHover={{ y: -2 }}
-                  className="bg-white rounded border border-gray-200 shadow-sm overflow-hidden group cursor-pointer"
+                  whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
+                  className="bg-white rounded-lg border border-slate-100 shadow-sm overflow-hidden group cursor-pointer transition-all duration-300"
                 >
                   <div
                     className={`h-42 ${act.imageColor} relative overflow-hidden`}
@@ -356,28 +349,28 @@ export default function NewsActivitySection() {
                         <img
                           src={act.image}
                           alt={act.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                       </>
                     ) : (
                       <>
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-                        <div className="w-full h-full flex items-center justify-center opacity-50">
-                          <Star className="text-white w-12 h-12" />
+                        <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-slate-900/0 transition-colors" />
+                        <div className="w-full h-full flex items-center justify-center opacity-20">
+                          <Star className="text-slate-900 w-12 h-12" />
                         </div>
                       </>
                     )}
                   </div>
-                  <div className="p-3">
-                    <h4 className="font-bold font-kiem-hiep text-lg leading-tight mb-1 truncate group-hover:text-[#b92b27]">
+                  <div className="p-4 bg-white">
+                    <h4 className="font-bold font-kiem-hiep text-xl leading-tight mb-2 truncate text-slate-900 group-hover:text-red-600 transition-colors">
                       {act.title}
                     </h4>
-                    <p className="text-xs text-gray-500 mb-2 truncate">
+                    <p className="text-xs text-slate-400 mb-3 truncate font-medium">
                       {act.subtitle}
                     </p>
                     <div
-                      className={`text-xs font-bold border border-current px-2 py-0.5 inline-block rounded-sm ${act.statusColor}`}
+                      className={`text-[10px] font-bold border-2 border-slate-100 px-2.5 py-1 inline-block rounded-lg shadow-sm text-slate-600 bg-slate-50`}
                     >
                       {act.dateRange}
                     </div>

@@ -6,7 +6,7 @@ const NAV_ITEMS = navigation.header.navItems;
 
 // Reusable class names for navigation links
 const navLinkClass =
-  "text-white hover:text-yellow-300 px-4 py-2 text-base font-medium transition-colors flex items-center h-5";
+  "text-white hover:text-yellow-300 px-4 py-2 text-base font-bold transition-all flex items-center h-5 font-kiem-hiep tracking-wide";
 
 // Header renders the main navigation bar with branding.
 export default function Header() {
