@@ -74,8 +74,27 @@ export default function NewsList() {
                 <Link
                   key={item.id}
                   href={`/news/${item.slug ?? ""}`}
-                  className="flex items-center gap-4 py-3.5 px-6 bg-white border border-slate-100 rounded-lg hover:border-red-100 hover:shadow-md hover:bg-slate-50/30 transition-all group"
+                  className="flex items-center gap-4 py-3.5 px-6 bg-white border border-slate-100 rounded-lg hover:border-red-100 hover:shadow-md hover:bg-slate-50/30 transition-all group relative overflow-hidden"
                 >
+                  {/* Ribbon Badge */}
+                  {item.isHot ? (
+                    <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none">
+                      <div className="absolute top-0 right-0 bg-red-600 text-white text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[60px]">
+                        HOT
+                      </div>
+                    </div>
+                  ) : item.isNew ? (
+                    <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none">
+                      <motion.div
+                        animate={{ opacity: [1, 0.7, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="absolute top-0 right-0 bg-green-500 text-white text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[60px]"
+                      >
+                        NEW
+                      </motion.div>
+                    </div>
+                  ) : null}
+
                   {/* Robinhood Style Tag */}
                   <div className="flex-shrink-0">
                     <span
@@ -91,7 +110,7 @@ export default function NewsList() {
                     </span>
                   </div>
 
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 pr-6">
                     <h3 className="truncate text-lg font-bold text-slate-700 group-hover:text-red-600 transition-colors">
                       {item.title}
                     </h3>

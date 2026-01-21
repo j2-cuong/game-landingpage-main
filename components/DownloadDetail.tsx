@@ -14,57 +14,68 @@ export default function DownloadDetail() {
         <div className="flex items-center justify-between bg-white p-6 rounded-lg shadow-sm border border-slate-100">
           <div className="flex items-center gap-3">
             <div className="w-2 h-8 bg-red-600 rounded-full"></div>
-            <h1 className="text-3xl font-extrabold text-slate-900 uppercase tracking-wide">Tải Game Kiếm Hiệp</h1>
-          </div>
-          <div className="text-sm text-slate-400 font-sans font-medium uppercase tracking-widest">
-            Sovereign Edition
+            <h1 className="text-3xl font-extrabold text-slate-900 uppercase tracking-wide">Tải Game</h1>
           </div>
         </div>
 
         <div className="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden">
           <div className="p-10 flex flex-col gap-12">
 
-            {/* Main Client Section */}
-            <div className="space-y-8">
+            {/* Main Client Table Section */}
+            <div className="space-y-6">
               <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                <span className="text-red-600">◆</span> Tải xuống ứng dụng khách
+                <span className="text-red-600">◆</span> Thông Tin Tải Game
               </h2>
 
-              <div className="grid grid-cols-2 gap-8">
-                {downloadInfo.clients.map((client) => (
-                  <div key={client.id} className="flex flex-col gap-6 p-6 rounded-lg bg-slate-50 border border-slate-100 group transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1">
-                    <button
-                      className={`w-full h-24 bg-gradient-to-br ${client.id === "full" ? "from-red-600 via-red-700 to-red-800 shadow-red-200" : "from-blue-600 via-blue-700 to-blue-800 shadow-blue-200"} text-white font-bold rounded-lg transition-all shadow-lg flex items-center justify-center gap-3 group-hover:scale-[1.02] active:scale-95`}
-                    >
-                      <Download size={28} className="animate-bounce" />
-                      <span className="text-2xl uppercase tracking-wider">Tải xuống {client.type}</span>
-                    </button>
-
-                    <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm">
-                      <div className="flex flex-col">
-                        <span className="text-slate-400 font-sans text-[10px] uppercase font-bold tracking-tighter">Phiên bản</span>
-                        <span className="text-slate-700 font-bold">{client.version}</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-slate-400 font-sans text-[10px] uppercase font-bold tracking-tighter">Kích thước</span>
-                        <span className="text-slate-700 font-bold">{client.size}</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-slate-400 font-sans text-[10px] uppercase font-bold tracking-tighter">Ngày cập nhật</span>
-                        <span className="text-slate-700 font-bold">{client.updateDate}</span>
-                      </div>
-                      <div className="flex flex-col col-span-2">
-                        <span className="text-slate-400 font-sans text-[10px] uppercase font-bold tracking-tighter">Mã MD5 (Bảo mật)</span>
-                        <span className="text-slate-500 break-all font-mono text-[11px] leading-tight mt-1">{client.md5}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              <div className="overflow-hidden border border-slate-100 rounded-lg shadow-sm">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-900 text-white font-sans text-sm uppercase tracking-wider">
+                      <th className="px-8 py-5 font-bold">Phiên bản</th>
+                      <th className="px-8 py-5 font-bold text-center">Dung lượng & Cập nhật</th>
+                      <th className="px-8 py-5 font-bold text-right">Tải Xuống</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {downloadInfo.clients.map((client) => (
+                      <tr key={client.id} className="group hover:bg-slate-50 transition-colors">
+                        <td className="px-8 py-6">
+                          <div className="flex flex-col">
+                            <span className="text-xl font-bold text-slate-800">{client.version}</span>
+                            <span className="text-slate-400 text-sm font-sans uppercase tracking-tighter">({client.type})</span>
+                          </div>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-600 font-sans text-sm font-medium">
+                            <span>{client.size}</span>
+                            <span className="text-slate-300">|</span>
+                            <span>{client.updateDate}</span>
+                          </div>
+                        </td>
+                        <td className="px-8 py-6 text-right">
+                          <button
+                            className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-all shadow-md hover:shadow-lg active:scale-95 ${client.id === "full"
+                              ? "bg-red-600 hover:bg-red-700 shadow-red-100"
+                              : "bg-slate-700 hover:bg-slate-800 shadow-slate-200"
+                              }`}
+                          >
+                            <Download size={18} className="animate-bounce" />
+                            <span className="uppercase tracking-wide text-sm">Tải Xuống Ngay</span>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
+
+              <p className="text-slate-400 text-sm italic font-sans px-2">
+                * Lưu ý: Vui lòng kiểm tra dung lượng trống của thiết bị trước khi tiến hành tải và cài đặt bản cập nhật mới nhất.
+              </p>
             </div>
 
             {/* Recommended Software */}
-            <div className="pt-10 border-t border-slate-50">
+            {/* <div className="pt-10 border-t border-slate-50">
               <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8">
                 <span className="text-red-600">◆</span> Phần mềm đề xuất
               </h2>
@@ -91,7 +102,7 @@ export default function DownloadDetail() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

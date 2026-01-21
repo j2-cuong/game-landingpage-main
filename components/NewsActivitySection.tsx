@@ -52,7 +52,7 @@ function ActionButton({ item }: { item: QuickAction }) {
     <motion.button
       whileTap={{ scale: 0.98 }}
       whileHover={{ y: -4 }}
-      className={`w-full flex-1 mb-0 rounded-lg flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-md transition-all duration-300 border border-white/10 ${!item.bgImage ? `${item.gradient} ${item.background}` : ""
+      className={`w-full ${isDownload ? 'h-[250px]' : 'h-[70px]'} mb-0 rounded-lg flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-md transition-all duration-300 border border-white/10 ${!item.bgImage ? `${item.gradient} ${item.background}` : ""
         }`}
       style={{
         backgroundImage: item.bgImage ? `url(${item.bgImage})` : undefined,
@@ -62,25 +62,36 @@ function ActionButton({ item }: { item: QuickAction }) {
       onClick={handleClick}
     >
       {/* Glossy overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
+
+      {/* Dark contrast overlay - specialized for image vs solid bg */}
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none transition-opacity ${item.bgImage ? 'opacity-70' : 'opacity-30'}`} />
 
       {/* Main Content Area */}
-      <div className={`flex flex-col items-center justify-center w-full z-10 ${isDownload ? 'h-3/4' : 'h-full'}`}>
+      <div className={`flex ${isDownload ? 'flex-col' : 'flex-row px-4 gap-3'} items-center justify-center w-full z-10 ${isDownload ? 'h-3/4' : 'h-full'}`}>
         {!isDownload && (
-          <div className="text-white mb-2 drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500">
-            {getQuickActionIcon(item.iconName, 36)}
+          <div className="text-white drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500">
+            {getQuickActionIcon(item.iconName, 28)}
           </div>
         )}
 
-        <div className="flex flex-col items-center">
-          <span className={`font-kiem-hiep leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ${isDownload
-            ? "text-5xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
-            : "text-xl font-bold uppercase text-white group-hover:tracking-widest"
-            }`}>
+        <div className={`flex flex-col ${isDownload ? 'items-center' : 'items-start min-w-0'}`}>
+          <span
+            className={`font-kiem-hiep leading-tight transition-all duration-300 ${isDownload
+              ? "text-5xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
+              : "text-xl font-bold uppercase text-white truncate"
+              }`}
+            style={{
+              textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5), 0 0 10px rgba(0,0,0,0.3)'
+            }}
+          >
             {item.label}
           </span>
           {!isDownload && (
-            <span className="text-[10px] opacity-70 font-sans mt-1 text-white uppercase tracking-tighter group-hover:opacity-100 transition-opacity">
+            <span
+              className="text-[9px] opacity-90 font-sans text-white uppercase tracking-tighter group-hover:opacity-100 transition-opacity font-bold truncate"
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.9)' }}
+            >
               {item.sub}
             </span>
           )}
@@ -89,13 +100,13 @@ function ActionButton({ item }: { item: QuickAction }) {
 
       {/* Special Bottom Section for Download */}
       {isDownload && item.extraInfo && (
-        <div className="w-full h-1/4 bg-black/30 backdrop-blur-md border-t border-white/10 flex items-center divide-x divide-white/10 z-10">
+        <div className="w-full h-1/4 bg-black/40 backdrop-blur-md border-t border-white/10 flex items-center divide-x divide-white/10 z-10">
           <div className="flex-1 flex flex-col items-center justify-center leading-none">
-            <span className="text-amber-400 font-bold text-lg">{item.extraInfo.left.value}</span>
+            <span className="text-amber-400 font-bold text-lg" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{item.extraInfo.left.value}</span>
             <span className="text-[9px] text-white/60 uppercase font-medium">{item.extraInfo.left.label}</span>
           </div>
           <div className="flex-1 flex flex-col items-center justify-center leading-none">
-            <span className="text-amber-400 font-bold text-lg">{item.extraInfo.right.value}</span>
+            <span className="text-amber-400 font-bold text-lg" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{item.extraInfo.right.value}</span>
             <span className="text-[9px] text-white/60 uppercase font-medium">{item.extraInfo.right.label}</span>
           </div>
         </div>
@@ -232,8 +243,27 @@ export default function NewsActivitySection() {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05, duration: 0.2 }}
-                    className="flex items-center gap-4 py-3 px-5 bg-white border border-slate-100 rounded-lg hover:border-red-100 hover:shadow-md hover:bg-slate-50/30 transition-all group cursor-pointer"
+                    className="flex items-center gap-4 py-3 px-5 bg-white border border-slate-100 rounded-lg hover:border-red-100 hover:shadow-md hover:bg-slate-50/30 transition-all group cursor-pointer relative overflow-hidden"
                   >
+                    {/* Ribbon Badge */}
+                    {news.isHot ? (
+                      <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none">
+                        <div className="absolute top-0 right-0 bg-red-600 text-white text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[60px]">
+                          HOT
+                        </div>
+                      </div>
+                    ) : news.isNew ? (
+                      <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none">
+                        <motion.div
+                          animate={{ opacity: [1, 0.7, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                          className="absolute top-0 right-0 bg-green-500 text-white text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[60px]"
+                        >
+                          NEW
+                        </motion.div>
+                      </div>
+                    ) : null}
+
                     {/* Robinhood Style Tag */}
                     <div className="flex-shrink-0">
                       <span
@@ -250,16 +280,10 @@ export default function NewsActivitySection() {
                     </div>
 
                     {/* Title Content */}
-                    <div className="flex-1 min-w-0 flex items-center gap-3">
+                    <div className="flex-1 min-w-0 pr-6">
                       <h3 className="truncate text-slate-700 font-bold text-lg font-kiem-hiep group-hover:text-red-700 transition-colors">
                         {news.title}
                       </h3>
-
-                      {news.isHot && (
-                        <span className="flex-shrink-0 inline-flex items-center text-[9px] font-bold text-white bg-red-600 px-1.5 py-0.5 rounded-md shadow-sm animate-pulse">
-                          HOT
-                        </span>
-                      )}
                     </div>
 
                     {/* Clean Date (No Author) */}
@@ -328,7 +352,7 @@ export default function NewsActivitySection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
             {(activeActivityTab === "ongoing"
               ? ACTIVITIES_ONGOING
               : ACTIVITIES_LONGTERM
