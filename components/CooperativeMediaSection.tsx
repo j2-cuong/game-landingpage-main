@@ -39,12 +39,11 @@ export default function CooperativeMediaSection() {
   return (
     <section
       className="w-full bg-[#f5f5f5] py-8 font-kiem-hiep "
-      style={{ minWidth: "1890px" }}
     >
-      <div className="w-full max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-2 gap-8">
+      <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {/* Left Panel: Đối tác truyền thông */}
-          <div className="bg-white p-6">
+          <div className="bg-white p-4 md:p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-6">
               Đối tác truyền thông
             </h3>
@@ -139,7 +138,7 @@ export default function CooperativeMediaSection() {
             </div>
 
             {/* Links */}
-            
+
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ function getTabColor(tab: string) {
 
 export default function NewsTabs({ tabs, activeTab, onTabChange }: NewsTabsProps) {
   return (
-    <div className="flex space-x-0">
+    <div className="flex space-x-0 overflow-x-auto whitespace-nowrap scrollbar-hide pb-1 w-full md:w-auto">
       {tabs.map((tab, idx) => {
         const isActive = idx === activeTab;
         const activeColor = getTabColor(tab);
@@ -32,14 +32,13 @@ export default function NewsTabs({ tabs, activeTab, onTabChange }: NewsTabsProps
           <button
             key={tab}
             onClick={() => onTabChange(idx)}
-            className={`relative px-6 py-4 font-bold transition-all font-kiem-hiep text-lg uppercase tracking-wider ${
-              isActive ? "opacity-100 scale-105" : "opacity-60 hover:opacity-100 hover:scale-105"
-            }`}
+            className={`relative px-4 md:px-6 py-3 md:py-4 font-bold transition-all font-kiem-hiep text-base md:text-lg uppercase tracking-wider flex-shrink-0 ${isActive ? "opacity-100 scale-105" : "opacity-60 hover:opacity-100 hover:scale-105"
+              }`}
             style={{ color: activeColor }}
           >
             {isActive && (
               <span
-                className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] animate-pulse"
+                className="absolute left-0 md:left-1 top-1/2 -translate-y-1/2 text-[8px] md:text-[10px] animate-pulse"
                 style={{ color: activeColor }}
               >
                 ◆

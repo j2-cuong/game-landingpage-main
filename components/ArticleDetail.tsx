@@ -12,11 +12,11 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
   const publishedAt = article.createdAt || `${article.date} 00:00:00`;
 
   return (
-    <section className="w-full flex justify-center bg-[#f8fafc] py-12 font-kiem-hiep">
-      <div className="w-[1200px] flex flex-col gap-8">
+    <section className="w-full flex justify-center bg-[#f8fafc] py-8 md:py-12 font-kiem-hiep">
+      <div className="w-full max-w-[1200px] px-4 flex flex-col gap-6 md:gap-8">
 
         {/* Quick Actions Grid */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
           {QUICK_ACTIONS.map((action) => (
             <Link
               href={action.href}
@@ -52,7 +52,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
 
         {/* Main Content Area */}
         <CardWithGradient>
-          <div className="p-10 md:p-16">
+          <div className="p-6 md:p-16">
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-slate-400 border-b border-slate-50 pb-8">
               <div className="flex items-center gap-2">
@@ -70,7 +70,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-10 leading-[1.2] tracking-tight">
+            <h1 className="text-2xl md:text-5xl font-extrabold text-slate-900 mb-6 md:mb-10 leading-[1.3] md:leading-[1.2] tracking-tight">
               {article.title}
             </h1>
 
@@ -86,10 +86,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             )}
 
             {/* Article Body - Dynamic Content */}
-            <div className="prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-strong:text-red-600 prose-a:text-red-600 hover:prose-a:text-red-700">
+            <div className="prose prose-slate prose-xl max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-strong:text-red-600 prose-a:text-red-600 hover:prose-a:text-red-700 prose-img:rounded-lg prose-img:w-full">
               {article.body ? (
                 <article
-                  className="space-y-8 text-slate-700 leading-relaxed text-lg"
+                  className="space-y-8 text-slate-700 leading-relaxed text-xl"
                   dangerouslySetInnerHTML={{ __html: article.body }}
                 />
               ) : (
@@ -109,7 +109,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
           </div>
 
           {/* Related Links Footer */}
-          
+
         </CardWithGradient>
 
         {/* Navigation Between Articles */}

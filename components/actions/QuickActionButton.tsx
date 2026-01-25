@@ -51,9 +51,8 @@ export default function QuickActionButton({
     <motion.button
       whileTap={{ scale: 0.98 }}
       whileHover={{ y: -4 }}
-      className={`w-full ${isDownload ? "h-[250px]" : "h-[70px]"} mb-0 rounded-lg flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-md transition-all duration-300 border border-white/10 ${
-        !bgImage ? `${gradient} ${background}` : ""
-      }`}
+      className={`w-full ${isDownload ? "h-[200px] md:h-[250px]" : "h-[60px] md:h-[70px]"} mb-0 rounded-lg flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group shadow-md transition-all duration-300 border border-white/10 ${!bgImage ? `${gradient} ${background}` : ""
+        }`}
       style={{
         backgroundImage: bgImage ? `url(${bgImage})` : undefined,
         backgroundSize: "cover",
@@ -66,16 +65,14 @@ export default function QuickActionButton({
 
       {/* Dark contrast overlay */}
       <div
-        className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none transition-opacity ${
-          bgImage ? "opacity-70" : "opacity-30"
-        }`}
+        className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none transition-opacity ${bgImage ? "opacity-70" : "opacity-30"
+          }`}
       />
 
       {/* Main Content Area */}
       <div
-        className={`flex ${isDownload ? "flex-col" : "flex-row px-4 gap-3"} items-center justify-center w-full z-10 ${
-          isDownload ? "h-3/4" : "h-full"
-        }`}
+        className={`flex ${isDownload ? "flex-col" : "flex-row px-4 gap-3"} items-center justify-center w-full z-10 ${isDownload ? "h-3/4" : "h-full"
+          }`}
       >
         {!isDownload && (
           <div className="text-white drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500">
@@ -85,11 +82,10 @@ export default function QuickActionButton({
 
         <div className={`flex flex-col ${isDownload ? "items-center" : "items-start min-w-0"}`}>
           <span
-            className={`font-kiem-hiep leading-tight transition-all duration-300 ${
-              isDownload
+            className={`font-kiem-hiep leading-tight transition-all duration-300 ${isDownload
                 ? "text-5xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
                 : "text-xl font-bold uppercase text-white truncate"
-            }`}
+              }`}
             style={{
               textShadow: "0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5), 0 0 10px rgba(0,0,0,0.3)",
             }}

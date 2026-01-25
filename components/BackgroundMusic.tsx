@@ -56,7 +56,7 @@ export const BackgroundMusic: FC = () => {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-[9999]">
+        <div className="hidden md:block fixed bottom-60 lg:bottom-6 right-6 z-[9999]" suppressHydrationWarning>
             <motion.button
                 onClick={togglePlay}
                 whileHover={{ scale: 1.1 }}

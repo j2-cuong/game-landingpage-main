@@ -39,10 +39,7 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   return (
-    <main
-      className="mx-auto"
-      style={{ minWidth: "1890px", maxWidth: "1890px" }}
-    >
+    <main className="mx-auto w-full overflow-x-hidden">
       <Header />
       <Hero>
         <ArticleDetail article={article} />

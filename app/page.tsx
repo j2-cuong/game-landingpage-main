@@ -5,10 +5,7 @@ import NewsActivitySection from "../components/NewsActivitySection";
 // Home renders the main landing page with hero and game showcase.
 export default function Home() {
   return (
-    <main
-      className="mx-auto"
-      style={{ minWidth: "1890px", maxWidth: "1890px" }}
-    >
+    <main className="mx-auto w-full overflow-x-hidden">
       <Header />
       <Hero>
         <NewsActivitySection />
