@@ -1,38 +1,30 @@
 [
     {
         "id": "download",
-        "label": "Tải Game Ngay",
+        "label": "Cài Đặt",
         "sub": "Download Game",
         "iconName": "download",
-        "gradient": "from-[#b92b27] to-[#801614] border-[#e74c3c]",
+        "gradient": "from-[#b92b27] to-[#801614]",
         "background": "bg-[#b92b27]",
-        "href": "/download"
-    },
-    {
-        "id": "mobile",
-        "label": "Đăng Nhập Mobile",
-        "sub": "Mobile Login",
-        "iconName": "mobile",
-        "gradient": "from-[#e67e22] to-[#d35400] border-[#f39c12]",
-        "background": "bg-[#e67e22]",
-        "href": "/mobile"
-    },
-    {
-        "id": "register",
-        "label": "Đăng Ký Nhanh",
-        "sub": "Register Account",
-        "iconName": "register",
-        "gradient": "from-[#8d6e63] to-[#5d4037] border-[#a1887f]",
-        "background": "bg-[#8d6e63]",
-        "href": "/register"
+        "href": "/download",
+        "extraInfo": {
+            "left": {
+                "value": "7Gb",
+                "label": "Bản đầy đủ"
+            },
+            "right": {
+                "value": "55Mb",
+                "label": "Bản cập nhật"
+            }
+        }
     },
     {
         "id": "topup",
-        "label": "Nạp Thẻ / Coin",
+        "label": "Nạp Thẻ",
         "sub": "Top Up",
         "iconName": "topup",
-        "gradient": "from-[#2980b9] to-[#2c3e50] border-[#3498db]",
-        "background": "bg-[#2980b9]",
+        "gradient": "from-slate-600 to-slate-800",
+        "background": "bg-slate-700",
         "href": "/topup"
     }
 ]
