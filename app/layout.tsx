@@ -1,14 +1,13 @@
 import "./globals.css";
-import Footer from "@/components/Footer";
 import { BackgroundMusic } from "@/components/BackgroundMusic";
 import ChatContact from "@/components/ChatContact";
 
 export const metadata = {
-  title: "Kiếm Hiệp Thế Giới - Đại cập nhật Nhật Nguyệt Tranh Phong",
+  title: "Kiếm Thế PC 2009 - Tái Hiện Huyền Thoại Kiếm Hiệp",
   description:
-    "Trang chủ Kiếm Hiệp Thế Giới với đại cập nhật Nhật Nguyệt Tranh Phong. Khám phá giang hồ, tải game và tham gia cộng đồng người chơi đông đảo.",
+    "Trang chủ Kiếm Thế PC 2009. Tái hiện nguyên bản huyền thoại kiếm hiệp trên PC. Tải game ngay để trải nghiệm chiến trường Tống Kim rực lửa.",
   keywords:
-    "Kiếm Hiệp Thế Giới, Nhật Nguyệt Tranh Phong, kiếm hiệp, MMO, tải game, sự kiện",
+    "Kiếm Thế 2009, Kiếm Thế PC, Kiếm Thế Private, tải game kiếm thế, kiếm hiệp, MMO, Tống Kim",
 };
 
 export default function RootLayout({

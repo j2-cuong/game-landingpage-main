@@ -2,7 +2,7 @@
   "pcApp": {
     "title": "Tải xuống ứng dụng PC",
     "version": "v1.4.0",
-    "size": "142MB",
+    "size": "14,4GB",
     "updateDate": "14 tháng 9, 2023",
     "launcherUrl": "#",
     "cloudGameUrl": "#",
@@ -12,31 +12,28 @@
     "androidNote": "Nếu trình duyệt mặc định trên điện thoại Android không thể tải xuống, vui lòng sao chép liên kết vào trình duyệt khác trên điện thoại để tải xuống"
   },
   "miniApp": {
-    "title": "Kiếm Hiệp Tiểu Thanh",
+    "title": "Ngũ hành kiếm - Kiếm Thế PC 2009",
     "version": "1.11.136 (Build 1400)",
-    "size": "100.2M",
-    "updateDate": "29 tháng 12, 2023",
-    "description": "Độc đáo, chơi nhẹ nhàng, game võ hiệp 2D phong cách Trung Hoa \"Kiếm Hiệp Thế Giới\" tập trung tạo ra trải nghiệm võ hiệp nhẹ nhàng cho dân văn phòng.\nHiện đã ra mắt trợ lý di động \"Kiếm Hiệp Tiểu Thanh\", mang đến cho các đại hiệp trải nghiệm chơi \"Kiếm Hiệp Thế Giới\" trên điện thoại một cách nhẹ nhàng.\nKết nối liền mạch giữa thiết bị di động và máy tính, tương tác chat theo thời gian thực, các hoạt động thú vị với phần thưởng phong phú, chức năng quản lý tiện lợi và ưu đãi hơn, mang đến cho bạn trải nghiệm giang hồ tự do, giao tiếp không ngừng!",
+    "size": "100,2MB",
+    "updateDate": "25 tháng 1, 2026",
+    "description": "Độc đáo, chơi nhẹ nhàng, game võ hiệp 2D phong cách Trung Hoa \"Kiếm Thế PC 2009\" tập trung tạo ra trải nghiệm võ hiệp nhẹ nhàng cho dân văn phòng.\nHiện đã ra mắt trợ lý di động \"Ngũ hành kiếm - Kiếm Thế PC 2009\", mang đến cho các đại hiệp trải nghiệm chơi \"Kiếm Thế PC 2009\" trên điện thoại một cách nhẹ nhàng.\nKết nối liền mạch giữa thiết bị di động và máy tính, tương tác chat theo thời gian thực, các hoạt động thú vị với phần thưởng phong phú, chức năng quản lý tiện lợi và ưu đãi hơn, mang đến cho bạn trải nghiệm giang hồ tự do, giao tiếp không ngừng!",
     "androidNote": "Nếu trình duyệt mặc định trên điện thoại Android không thể tải xuống, vui lòng sao chép liên kết vào trình duyệt khác trên điện thoại để tải xuống,"
   },
   "managerApp": {
-    "title": "Quản lý game Tây Sơn Cư",
+    "title": "Quản lý game Ngũ hành kiếm",
     "iosUrl": "#",
     "androidUrl": "#",
     "features": [
-      "1. Quản lý game Tây Sơn Cư là một công cụ tổng hợp dịch vụ và bảo mật game hoàn chỉnh.",
-      "2. Bao gồm dịch vụ bảo mật do ứng dụng token điện thoại Kingsoft cung cấp, ngoài ra còn có dịch vụ quản lý và truy vấn tài khoản, dịch vụ nạp tiền game, v.v.",
-      "3. Khi liên kết tài khoản với Quản lý game Tây Sơn Cư, sẽ tự động hủy liên kết các công cụ bảo mật khác.",
-      "4. Mỗi quản lý game có thể liên kết tối đa 20 tài khoản."
+      "1. Dịch vụ bảo mật do Ngũ Hành Kiếm cung cấp, ngoài ra còn có dịch vụ quản lý và truy vấn tài khoản, dịch vụ nạp tiền game, v.v."
     ],
-    "supportedGames": "Dịch vụ bảo mật：《Kiếm Hiệp Thế Giới》、《Kiếm Võng 2 - Khu miễn phí》、《Kiếm Hiệp 2 Ngoại Truyện》；\nDịch vụ thao tác an toàn, nạp tiền và truy vấn：Tất cả các game được hỗ trợ bởi các chức năng tương ứng của Tiêu Dao Võng."
+    "supportedGames": "Kiếm Thế PC 2009"
   },
   "clients": [
     {
       "id": "full",
       "type": "Phiên bản đầy đủ",
       "version": "Nhật Nguyệt Tranh Phong",
-      "size": "14.4GB",
+      "size": "14,4GB",
       "updateDate": "14 tháng 10, 2025",
       "md5": "8174a48338b50b607cfdd41a906a203a",
       "url": "#"
@@ -45,7 +42,7 @@
       "id": "mini",
       "type": "Phiên bản nhỏ",
       "version": "Nhật Nguyệt Tranh Phong",
-      "size": "272M",
+      "size": "272 MB",
       "updateDate": "14 tháng 10, 2025",
       "md5": "890aff28c89025b7fd3971f010fd3654",
       "url": "#"
