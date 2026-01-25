@@ -1,6 +1,6 @@
-import Header from "../../../components/Header";
-import ArticleDetail from "../../../components/ArticleDetail";
-import { getArticleBySlug } from "../../../data/newsActivity";
+import Header from "@/components/Header";
+import ArticleDetail from "@/components/ArticleDetail";
+import { getArticleBySlug } from "@/data/services/articles";
 import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
 
@@ -23,7 +23,7 @@ export default async function ArticlePage({
     >
       <Header />
       <Hero>
-        <ArticleDetail article={article!} />
+        <ArticleDetail article={article} />
       </Hero>
     </main>
   );

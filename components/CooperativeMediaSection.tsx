@@ -139,17 +139,7 @@ export default function CooperativeMediaSection() {
             </div>
 
             {/* Links */}
-            <div className="flex items-center gap-4 flex-wrap">
-              {navigation.footer.bottomLinks.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.href}
-                  className="text-sm text-gray-600 hover:text-[#dd201e] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            
           </div>
         </div>
       </div>

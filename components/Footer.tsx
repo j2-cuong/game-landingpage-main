@@ -78,19 +78,6 @@ export default function Footer() {
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <span>Bảo trì: Thứ Ba hàng tuần 7:30 - 10:30</span>
               <span>|</span>
-              {navigation.footer.bottomLinks.map((link, idx) => (
-                <React.Fragment key={idx}>
-                  <a
-                    href={link.href}
-                    className="hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                  {idx < navigation.footer.bottomLinks.length - 1 && (
-                    <span>|</span>
-                  )}
-                </React.Fragment>
-              ))}
             </div>
           </div>
         </div>

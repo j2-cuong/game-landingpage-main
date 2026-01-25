@@ -26,5 +26,14 @@
         "gradient": "from-slate-600 to-slate-800",
         "background": "bg-slate-700",
         "href": "/topup"
+    },
+    {
+        "id": "1",
+        "label": "1",
+        "sub": "1",
+        "iconName": "1",
+        "gradient": "from-slate-600 to-slate-800",
+        "background": "bg-slate-700",
+        "href": "/1"
     }
 ]
