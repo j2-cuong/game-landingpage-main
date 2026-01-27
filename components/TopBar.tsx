@@ -9,7 +9,7 @@ export default function TopBar() {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="/xiaoyao-logo.png"
+              src="/logo.png"
               alt="Cổng game Tiêu Dao"
               className="h-6 w-auto"
             />
@@ -21,11 +21,10 @@ export default function TopBar() {
               <a
                 key={idx}
                 href={link.href}
-                className={`${
-                  link.highlight
+                className={`${link.highlight
                     ? "text-red-600 hover:text-red-700 font-medium"
                     : "text-gray-600 hover:text-gray-900"
-                } text-sm transition-colors flex items-center`}
+                  } text-sm transition-colors flex items-center`}
               >
                 {link.label}
                 {link.hasDropdown && (

@@ -8,10 +8,10 @@ import downloadInfo from "../data/downloadInfo.json";
  */
 export default function DownloadDetail() {
   return (
-    <section className="w-full flex justify-center bg-[#f8fafc] py-12 font-kiem-hiep">
-      <div className="w-[1200px] flex flex-col gap-8">
+    <section className="w-full flex justify-center bg-[#f8fafc] py-8 md:py-12 font-kiem-hiep">
+      <div className="w-full max-w-[1200px] px-4 flex flex-col gap-6 md:gap-8">
         {/* Title Card */}
-        <div className="flex items-center justify-between bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+        <div className="flex items-center justify-between bg-white p-4 md:p-6 rounded-lg shadow-sm border border-slate-100">
           <div className="flex items-center gap-3">
             <div className="w-2 h-8 bg-red-600 rounded-full"></div>
             <h1 className="text-3xl font-extrabold text-slate-900 uppercase tracking-wide">Tải Game</h1>
@@ -19,21 +19,20 @@ export default function DownloadDetail() {
         </div>
 
         <div className="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden">
-          <div className="p-10 flex flex-col gap-12">
+          <div className="p-4 md:p-10 flex flex-col gap-8 md:gap-12">
 
-            {/* Main Client Table Section */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
                 <span className="text-red-600">◆</span> Thông Tin Tải Game
               </h2>
 
-              <div className="overflow-hidden border border-slate-100 rounded-lg shadow-sm">
+              <div className="overflow-x-auto border border-slate-100 rounded-lg shadow-sm">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-900 text-white font-sans text-sm uppercase tracking-wider">
-                      <th className="px-8 py-5 font-bold">Phiên bản</th>
-                      <th className="px-8 py-5 font-bold text-center">Dung lượng & Cập nhật</th>
-                      <th className="px-8 py-5 font-bold text-right">Tải Xuống</th>
+                      <th className="px-6 md:px-8 py-5 font-bold whitespace-nowrap">Phiên bản</th>
+                      <th className="px-6 md:px-8 py-5 font-bold text-center whitespace-nowrap">Dung lượng & Cập nhật</th>
+                      <th className="px-6 md:px-8 py-5 font-bold text-right whitespace-nowrap">Tải Xuống</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">

@@ -51,10 +51,10 @@ export default function NewsList() {
   };
 
   return (
-    <section className="w-full flex justify-center bg-[#f8fafc] py-12 font-kiem-hiep">
-      <div className="w-[1200px] flex flex-col gap-8">
+    <section className="w-full flex justify-center bg-[#f8fafc] py-8 md:py-12 font-kiem-hiep">
+      <div className="w-full max-w-[1200px] px-4 flex flex-col gap-6 md:gap-8">
         {/* Title Card */}
-        <Card padding="md" className="flex items-center justify-between">
+        <Card padding="md" className="flex flex-col md:flex-row items-center justify-between gap-4">
           <CardHeader withAccent>
             <h1 className="text-3xl font-extrabold text-slate-900 uppercase tracking-wide">
               Trung tâm tin tức
@@ -70,7 +70,7 @@ export default function NewsList() {
         {/* Main Content Card */}
         <Card padding="none">
           {/* Tab Navigation */}
-          <div className="flex items-center border-b border-slate-50 bg-[#fbfcfd] px-8">
+          <div className="flex items-center border-b border-slate-50 bg-[#fbfcfd] px-4 md:px-8 overflow-x-auto">
             <NewsTabs
               tabs={categoryLabels}
               activeTab={activeCategory}
@@ -78,7 +78,7 @@ export default function NewsList() {
             />
           </div>
 
-          <div className="p-8">
+          <div className="p-4 md:p-8">
             <div className="flex flex-col gap-3">
               <AnimatePresence mode="wait">
                 {displayedItems.map((item, idx) => (

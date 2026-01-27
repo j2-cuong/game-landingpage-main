@@ -11,10 +11,7 @@ export const metadata: Metadata = {
 // DownloadPage renders the download page with download detail component.
 export default function DownloadPage() {
   return (
-    <main
-      className="mx-auto"
-      style={{ minWidth: "1890px", maxWidth: "1890px" }}
-    >
+    <main className="mx-auto w-full overflow-x-hidden">
       <Header />
       <Hero>
         <DownloadDetail />
