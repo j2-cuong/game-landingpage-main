@@ -57,15 +57,15 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-slate-400 border-b border-slate-50 pb-8">
               <div className="flex items-center gap-2">
                 <User size={16} className="text-red-500" />
-                <span>Người viết: <span className="text-slate-700 font-medium">{article.author || "BQT Kiếm Hiệp"}</span></span>
+                <span className="text-slate-700 text-xl font-medium">Người viết: <span className="text-slate-700 text-xl font-medium">{article.author || "BQT Kiếm Hiệp"}</span></span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar size={16} className="text-red-500" />
-                <span>Phát hành: <span className="text-slate-700 font-medium">{publishedAt}</span></span>
+                <span className="text-slate-700 text-xl font-medium">Phát hành: <span className="text-slate-700 text-xl font-medium">{publishedAt}</span></span>
               </div>
               <div className="flex items-center gap-2">
                 <Tag size={16} className="text-red-500" />
-                <span>Chuyên mục: <span className="bg-red-50 text-red-600 px-3 py-1 rounded-full font-semibold">{article.category}</span></span>
+                <span className="text-slate-700 text-xl font-medium">Chuyên mục: <span className="bg-red-50 text-red-600 px-3 py-1 rounded-full font-semibold">{article.category}</span></span>
               </div>
             </div>
 

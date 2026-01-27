@@ -17,7 +17,7 @@ export default function Hero({ children }: HeroProps) {
       {/* Background Image - Mobile */}
       <div
         className="absolute inset-0 bg-contain bg-top -z-1 bg-no-repeat bg-[#ecede9] md:hidden block"
-        style={{ backgroundImage: "url('/hero-bg-mb.jpeg')" }}
+        style={{ backgroundImage: "url('/hero-bg-mb.png')" }}
       ></div>
 
       {/* Content Container - positioned at bottom of hero section */}

@@ -35,20 +35,12 @@ export default function NewsCard({
       >
         {/* Ribbon Badge */}
         {isHot ? (
-          <div className="absolute top-0 right-0 w-10 md:w-12 h-10 md:h-12 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 right-0 bg-red-600 text-white text-[6px] md:text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-3 md:translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[50px] md:w-[60px]">
+          <div className="absolute -top-[2px] -right-[2px] w-14 md:w-16 h-14 md:h-16 overflow-hidden pointer-events-none z-10">
+            <div className="absolute top-0 right-0 bg-gradient-to-r from-red-600 to-red-500 text-white text-[10px] md:text-xs font-black px-6 py-1 transform rotate-45 translate-x-[18px] translate-y-[8px] shadow-lg uppercase tracking-widest border-t border-white/20
+            bg-red-400/10 font-medium text-red-400 inset-ring inset-ring-red-400/20
+            ">
               HOT
             </div>
-          </div>
-        ) : isNew ? (
-          <div className="absolute top-0 right-0 w-10 md:w-12 h-10 md:h-12 overflow-hidden pointer-events-none">
-            <motion.div
-              animate={{ opacity: [1, 0.7, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="absolute top-0 right-0 bg-green-500 text-white text-[6px] md:text-[8px] font-bold px-4 py-0.5 transform rotate-45 translate-x-3 md:translate-x-4 translate-y-1.5 shadow-sm uppercase text-center w-[50px] md:w-[60px]"
-            >
-              NEW
-            </motion.div>
           </div>
         ) : null}
 
@@ -69,9 +61,6 @@ export default function NewsCard({
           <span className="text-xs md:text-sm text-slate-400 font-sans font-medium tabular-nums group-hover:text-slate-600 hidden xs:block">
             {formattedDate}
           </span>
-          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-red-50 group-hover:text-red-500 transition-all">
-            <ChevronRight size={14} className="md:w-[18px] md:h-[18px]" />
-          </div>
         </div>
       </motion.div>
     </Link>

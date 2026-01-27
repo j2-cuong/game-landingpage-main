@@ -11,10 +11,8 @@
   "header": {
     "navItems": [
       { "label": "Trang chủ", "href": "/", "isExternal": false },
-      { "label": "Nạp tài khoản", "href": "#", "isExternal": false },
-      { "label": "Danh sách dịch vụ", "href": "#", "isExternal": false },
-      { "label": "Danh sách game", "href": "#", "isExternal": false },
-      { "label": "Diễn đàn chính thức", "href": "#", "isExternal": false }
+      { "label": "Nhóm zalo", "href": "#", "isExternal": false },
+      { "label": "Page FB", "href": "#", "isExternal": false }
     ]
   },
   "footer": {

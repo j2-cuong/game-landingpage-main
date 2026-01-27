@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, LayoutGrid, X as CloseIcon } from "lucide-react";
@@ -25,6 +25,20 @@ export default function NewsActivitySection() {
   const [activeNewsTab, setActiveNewsTab] = useState(0);
   const [activeActivityTab] = useState<"ongoing" | "longterm">("ongoing");
   const [isActionsOpen, setIsActionsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+
+    // Listen
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,13 +71,16 @@ export default function NewsActivitySection() {
     <section className="w-full flex justify-center font-sans text-[#2c3e50] relative">
       {/* Mobile Fixed Toggle for Quick Actions */}
       <div className="lg:hidden fixed bottom-6 right-6 z-[9999]">
-        <button
+        {
+          !isMobile && (
+            <button
           onClick={() => setIsActionsOpen(!isActionsOpen)}
           className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-red-500/40 border-2 border-white/20 hover:scale-110 active:scale-95 transition-all"
         >
           {isActionsOpen ? <CloseIcon size={24} /> : <LayoutGrid size={24} />}
         </button>
-
+          )
+        }
         <AnimatePresence>
           {isActionsOpen && (
             <>
