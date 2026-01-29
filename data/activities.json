@@ -72,6 +72,18 @@
     "showOnHomepage": true
   },
   {
+    "id": "a7",
+    "title": "Cập Nhật Phiên Bản Mới",
+    "subtitle": "Nhiều tính năng hấp dẫn",
+    "status": "Mới ra mắt",
+    "statusColor": "text-pink-600",
+    "imageColor": "bg-pink-100",
+    "dateRange": "10/10 Ra mắt",
+    "image": "/news/2025/1010/20251010061303969.png",
+    "type": "ongoing",
+    "showOnHomepage": true
+  },
+  {
     "id": "lt1",
     "title": "Du Ngoạn Sơn Hà",
     "subtitle": "Check-in nhận quà",

@@ -2,7 +2,16 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, LayoutGrid, X as CloseIcon } from "lucide-react";
+import { ChevronRight, LayoutGrid, X as CloseIcon, ChevronLeft } from "lucide-react";
+
+// Import Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 // Import data
 import {
@@ -64,8 +73,7 @@ export default function NewsActivitySection() {
 
   const activities = activeActivityTab === "ongoing" ? ACTIVITIES_ONGOING : ACTIVITIES_LONGTERM;
   const displayedActivities = activities
-    .filter((act) => act.showOnHomepage !== false)
-    .slice(0, 6);
+    .filter((act) => act.showOnHomepage !== false);
 
   return (
     <section className="w-full flex justify-center font-sans text-[#2c3e50] relative">
@@ -165,26 +173,57 @@ export default function NewsActivitySection() {
             <h2 className="text-xl md:text-3xl font-bold font-kiem-hiep text-slate-900 tracking-wide uppercase">
               Hoạt động thế giới
             </h2>
-            <div className="flex gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse delay-75"></span>
-              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse delay-150"></span>
-            </div>
+            
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
+
+          <div className="relative group">
+            <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={16}
+            slidesPerView={2}
+            loop={true}
+            navigation={{
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
+            }}
+            grabCursor={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
+            }}
+            className="w-full pb-4"
+          >
             {displayedActivities.map((act) => (
-              <ActivityCard
-                key={act.id}
-                id={act.id}
-                title={act.title}
-                subtitle={act.subtitle}
-                dateRange={act.dateRange}
-                image={act.image}
-                imageColor={act.imageColor}
-              />
+              <SwiperSlide key={act.id}>
+                <ActivityCard
+                  id={act.id}
+                  title={act.title}
+                  subtitle={act.subtitle}
+                  dateRange={act.dateRange}
+                  image={act.image}
+                  imageColor={act.imageColor}
+                />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
+
+          {/* Custom Navigation Buttons (Overlay) */}
+          <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all shadow-lg active:scale-95 disabled:opacity-0 opacity-80 hover:opacity-100 duration-300">
+            <ChevronLeft size={20} />
+          </button>
+          <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all shadow-lg active:scale-95 disabled:opacity-0 opacity-80 hover:opacity-100 duration-300">
+            <ChevronRight size={20} />
+          </button>
+        </div>
         </div>
       </div>
     </section>
