@@ -12,6 +12,8 @@ export default function TopBar() {
               src="/logo.png"
               alt="Cổng game Tiêu Dao"
               className="h-6 w-auto"
+              width={280}
+              height={100}
             />
           </div>
 

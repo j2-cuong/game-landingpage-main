@@ -11,7 +11,7 @@ export default function Hero({ children }: HeroProps) {
       {/* Background Image - Hidden on mobile */}
       <div
         className="absolute inset-0 bg-contain bg-top -z-1 bg-no-repeat bg-[#ecede9] hidden md:block"
-        style={{ backgroundImage: "url('/hero-bg.webp')" }}
+        style={{ backgroundImage: "url('/bg1.png')" }}
       ></div>
 
       {/* Background Image - Mobile */}

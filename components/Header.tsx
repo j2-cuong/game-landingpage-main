@@ -32,7 +32,6 @@ export default function Header() {
                 alt="Ngũ hành kiếm"
                 width={280}
                 height={100}
-                className="h-24 md:h-28 w-auto" // Increased logo size significantly
                 priority
               />
             </Link>
