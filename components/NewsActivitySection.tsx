@@ -171,7 +171,7 @@ export default function NewsActivitySection() {
         <div className="col-span-1 lg:col-span-12 bg-white p-4 md:p-8 mt-4 md:rounded-lg border border-slate-100 shadow-sm">
           <div className="flex items-center justify-between mb-6 md:mb-8 border-l-4 border-red-600 pl-4">
             <h2 className="text-xl md:text-3xl font-bold font-kiem-hiep text-slate-900 tracking-wide uppercase">
-              Hoạt động thế giới
+              Hoạt động nổi bật
             </h2>
             
           </div>
@@ -197,7 +197,7 @@ export default function NewsActivitySection() {
                 slidesPerView: 3,
               },
               1024: {
-                slidesPerView: 6,
+                slidesPerView: 4,
               },
             }}
             className="w-full pb-4"

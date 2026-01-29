@@ -83,7 +83,7 @@ export default function QuickActionButton({
         <div className={`flex flex-col ${isDownload ? "items-center" : "items-start min-w-0"}`}>
           <span
             className={`font-kiem-hiep leading-tight transition-all duration-300 ${isDownload
-                ? "text-5xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
+                ? "text-4xl text-amber-400 italic tracking-wider font-bold group-hover:text-white"
                 : "text-xl font-bold uppercase text-white truncate"
               }`}
             style={{
