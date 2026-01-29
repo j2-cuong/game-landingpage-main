@@ -177,7 +177,7 @@ export default function NewsActivitySection() {
           </div>
 
 
-          <div className="relative group">
+          <div className="relative">
             <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={16}
