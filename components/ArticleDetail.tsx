@@ -9,7 +9,7 @@ interface ArticleDetailProps {
 }
 
 export default function ArticleDetail({ article }: ArticleDetailProps) {
-  const publishedAt = article.createdAt || `${article.date} 00:00:00`;
+  const publishedAt = article.createdAt || `${article.date}`;
 
   return (
     <section className="w-full flex justify-center bg-[#f8fafc] py-8 md:py-12 font-kiem-hiep">
@@ -56,15 +56,15 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-slate-400 border-b border-slate-50 pb-8">
               <div className="flex items-center gap-2">
-                <User size={16} className="text-red-500" />
+                <User size={20} className="text-red-500" />
                 <span className="text-slate-700 text-xl font-medium">Người viết: <span className="text-slate-700 text-xl font-medium">{article.author || "BQT Kiếm Hiệp"}</span></span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={16} className="text-red-500" />
+                <Calendar size={20} className="text-red-500" />
                 <span className="text-slate-700 text-xl font-medium">Phát hành: <span className="text-slate-700 text-xl font-medium">{publishedAt}</span></span>
               </div>
               <div className="flex items-center gap-2">
-                <Tag size={16} className="text-red-500" />
+                <Tag size={20} className="text-red-500" />
                 <span className="text-slate-700 text-xl font-medium">Chuyên mục: <span className="bg-red-50 text-red-600 px-3 py-1 rounded-full font-semibold">{article.category}</span></span>
               </div>
             </div>
